@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import Showcase from './components/Showcase';
 import Ads from './components/Ads';
+import Products from './components/Products';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
         <Header />
         <Showcase />
         <Ads />
+        <Products />
       </div>
     );
   }
