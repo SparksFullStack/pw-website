@@ -1,0 +1,8 @@
+.navbar {
+    box-shadow: 2px 2px 5px #3292a6;
+    color: #3292a6;
+    background-color: white;
+    opacity: 0.9; }
+    .navbar .nav-item {
+      font-size: 1.4rem;
+      padding-right: 1.4rem; }
