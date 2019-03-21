@@ -7,13 +7,13 @@ class Header extends Component {
             <header>
                 <nav className="navbar navbar-expand-md navbar-light fixed-top py-4">
                 <div className="container">
-                    <a href="#home" className="navbar-brand">
+                    <a href="#root" className="navbar-brand">
                     <h3 className="d-inline align-middle">Proskins</h3>
                     </a>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <a href="#home" className="nav-link">Home</a>
+                            <a href="#root" className="nav-link">Home</a>
                         </li>
                         <li className="nav-item">
                             <a href="#about" className="nav-link">Showcase</a>
