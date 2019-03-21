@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./Products.css";
+import SkinCard from './SkinCard';
 import { Card, CardTitle, CardBody, CardHeader, CardFooter, CardText, Button } from 'reactstrap';
 
 class Products extends Component {
@@ -18,18 +19,7 @@ class Products extends Component {
                 </div>
 
                 <div className="row products--cards row">
-                    <Card className="products--card col-md-3">
-                        <CardHeader>
-                            <CardTitle>Skins go here</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laudantium?</CardText>
-                        </CardBody>
-                        <CardFooter className="products--card-footer">
-                            <Button className="products--buttons" color="primary">Buy now</Button>
-                            <Button className="products--buttons" outline>Info</Button>
-                        </CardFooter>
-                    </Card>
+                    <SkinCard />
 
                     <Card className="products--card col-md-3">
                         <CardHeader>

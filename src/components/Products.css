@@ -12,7 +12,7 @@
     margin-bottom: 20px;
 }
 
-.products--card-footer {
+.products--card-body {
     display: flex;
     justify-content: space-evenly;
 }

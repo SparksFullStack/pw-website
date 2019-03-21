@@ -8,7 +8,7 @@ class Header extends Component {
                 <nav className="navbar navbar-expand-md navbar-light fixed-top py-4">
                 <div className="container">
                     <a href="#home" className="navbar-brand">
-                    <h3 className="d-inline align-middle">Permwaze</h3>
+                    <h3 className="d-inline align-middle">Proskins</h3>
                     </a>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav ml-auto">

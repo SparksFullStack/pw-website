@@ -1,0 +1,7 @@
+.products--card-title {
+    margin-bottom: 0 !important;
+}
+
+.products--card-image + hr {
+    margin-bottom: 0;
+}
