@@ -16,7 +16,7 @@ class Header extends Component {
                             <a href="#root" className="nav-link">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a href="#about" className="nav-link">Showcase</a>
+                            <a href="#skins" className="nav-link">Showcase</a>
                         </li>
                     </ul>
                     </div>

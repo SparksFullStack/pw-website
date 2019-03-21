@@ -6,7 +6,7 @@ import { Card, CardTitle, CardBody, CardHeader, CardFooter, CardText, Button } f
 class Products extends Component {
   render() {
     return (
-        <section id="about" className="py-5 text-center bg-light">
+        <section id="skins" className="py-5 text-center bg-light">
             <div className="container">
                 <div className="row">
                     <div className="col">

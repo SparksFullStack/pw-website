@@ -1,7 +1,7 @@
 #showcase {
     position: relative;
     margin-top: 95px;
-    /* background: url(../img/mountains.jpg); */
+    background: url(../resources/mountains.jpg);
     min-height: 600px; }
     #showcase .primary-overlay {
       background: rgba(50, 146, 166, 0.8);
