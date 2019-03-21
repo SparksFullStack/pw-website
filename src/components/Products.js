@@ -20,73 +20,14 @@ class Products extends Component {
 
                 <div className="row products--cards row">
                     <SkinCard />
-
-                    <Card className="products--card col-md-3">
-                        <CardHeader>
-                            <CardTitle>Skins go here</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laudantium?</CardText>
-                        </CardBody>
-                        <CardFooter className="products--card-footer">
-                            <Button className="products--buttons" color="primary">Buy now</Button>
-                            <Button className="products--buttons" outline>Info</Button>
-                        </CardFooter>
-                    </Card>
-
-                    <Card className="products--card col-md-3">
-                        <CardHeader>
-                            <CardTitle>Skins go here</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laudantium?</CardText>
-                        </CardBody>
-                        <CardFooter className="products--card-footer">
-                            <Button className="products--buttons" color="primary">Buy now</Button>
-                            <Button className="products--buttons" outline>Info</Button>
-                        </CardFooter>
-                    </Card>
+                    <SkinCard />
+                    <SkinCard />
                 </div>  
 
                 <div className="row products--cards row">
-                    <Card className="products--card col-md-3">
-                        <CardHeader>
-                            <CardTitle>Skins go here</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laudantium?</CardText>
-                        </CardBody>
-                        <CardFooter className="products--card-footer">
-                            <Button className="products--buttons" color="primary">Buy now</Button>
-                            <Button className="products--buttons" outline>Info</Button>
-                        </CardFooter>
-                    </Card>
-
-                    <Card className="products--card col-md-3">
-                        <CardHeader>
-                            <CardTitle>Skins go here</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laudantium?</CardText>
-                        </CardBody>
-                        <CardFooter className="products--card-footer">
-                            <Button className="products--buttons" color="primary">Buy now</Button>
-                            <Button className="products--buttons" outline>Info</Button>
-                        </CardFooter>
-                    </Card>
-
-                    <Card className="products--card col-md-3">
-                        <CardHeader>
-                            <CardTitle>Skins go here</CardTitle>
-                        </CardHeader>
-                        <CardBody>
-                            <CardText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laudantium?</CardText>
-                        </CardBody>
-                        <CardFooter className="products--card-footer">
-                            <Button className="products--buttons" color="primary">Buy now</Button>
-                            <Button className="products--buttons" outline>Info</Button>
-                        </CardFooter>
-                    </Card>
+                    <SkinCard />
+                    <SkinCard />
+                    <SkinCard />
                 </div>
             </div>
         </section>
