@@ -68,8 +68,8 @@ class SkinCard extends Component {
                 <CardFooter className="products--card-footer">
                     
                     
-                    <Button className="products--buttons" color="success">Buy now</Button>
                     <Button onClick={() => this.props.toggleModal('skin')} className="products--buttons" outline>Info</Button>
+                    <Button className="products--buttons" color="success">Buy now</Button>
                 </CardFooter>
             </Card>
         )
