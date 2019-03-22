@@ -6,6 +6,10 @@
     border-bottom: 1px solid #ddd;
 }
 
+.products--header-text {
+    color: rgba(50, 146, 166, 0.8);
+}
+
 .products--cards {
     justify-content: space-evenly;
 }

@@ -11,9 +11,9 @@ class Products extends Component {
                 <div className="row">
                     <div className="col">
                     <div className="products--header mb-5">
-                        <h1 className="text-primary pb-3">
+                        <h2 className="text-primary pb-3 h1">
                             Premium Skins
-                        </h1>
+                        </h2>
                         <p className="lead pb-3">The best skins on the market</p>
                         </div>
                     </div>

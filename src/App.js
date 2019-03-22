@@ -7,6 +7,7 @@ import Showcase from './components/Showcase';
 import Ads from './components/Ads';
 import Products from './components/Products';
 import PopupModal from './components/PopupModal';
+import Footer from './components/Footer';
 
 class App extends Component {
   state = {
@@ -33,6 +34,7 @@ class App extends Component {
         <Showcase />
         <Ads />
         <Products toggleModal={this.toggleModal} />
+        <Footer />
         <PopupModal toggle={this.toggleModal} isOpen={this.state.modalState.isOpen} modalType={this.state.modalState.modalType} />
       </div>
     );
