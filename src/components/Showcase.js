@@ -9,13 +9,13 @@ class Showcase extends Component {
                     <div className="container">
                     <div className="row text-center">
                         <div className="col-lg-6 ml-auto mr-auto text-center">
-                        <h1 className="display-2 mt-5 pt-5">
+                        <h1 className="display-3 mt-5 pt-5">
                             Proskins
                         </h1>
                         <p className="lead">
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem fuga quibusdam necessitatibus corrupti dolorem id!
                         </p>
-                        <a href="" className="btn btn-outline-secondary btn-lg text-white">
+                        <a href="#skins" className="btn btn-outline-secondary btn-lg text-white">
                             <i className="fas fa-arrow-right"> View Skins</i>
                         </a>
                         </div>

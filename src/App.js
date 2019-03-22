@@ -17,18 +17,22 @@ class App extends Component {
   }
 
   toggleModal = (modalType) => {
-    this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType }});
+    if (modalType) {
+      this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType }});
+    } else {
+      this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType: "" }});
+    }
   }
 
 
   render() {
     return (
       <div className="App">
-        <PopupModal toggle={this.toggleModal} isOpen={this.state.modalState.isOpen} modalType={this.state.modalState.modalType} />
-        <Header />
+        <Header toggle={this.toggleModal} />
         <Showcase />
         <Ads />
         <Products />
+        <PopupModal toggle={this.toggleModal} isOpen={this.state.modalState.isOpen} modalType={this.state.modalState.modalType} />
       </div>
     );
   }

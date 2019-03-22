@@ -7,9 +7,13 @@
       font-size: 1.4rem;
       padding-right: 1.4rem; }
 
-/* .header--navbar {
-  padding: 2.5rem;
-} */
+#navbar-main {
+  width: 100%;
+}
+
+.navlink--about {
+  cursor: pointer;
+}
 
 @media screen and (max-width: 767px){
   #navbar-main {
