@@ -1,0 +1,5 @@
+@media screen and (max-width: 767px) {
+    .card--container {
+        margin-bottom: 20px;
+    }
+}

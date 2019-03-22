@@ -1,6 +1,9 @@
 .products--header {
     color: black;
     border-bottom: 1px solid black;
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px solid #ddd;
 }
 
 .products--cards {
@@ -20,3 +23,8 @@
 .products--buttons {
     width: 90px;
 }
+
+.info-header {
+    width: 50%;
+    margin: auto;
+    border-bottom: 1px solid #ddd; }
