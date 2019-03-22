@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Card, CardHeader, CardTitle, CardBody, CardFooter, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import Header from "./Header";
 import "./AddSkins.css";
 
@@ -8,23 +9,30 @@ class AddSkins extends Component {
             <div>
                 <Header page="admin" toggle={this.toggleModal} />
                 <section id="addSkins" className="py-5">
-                    <div className="primary-overlay text-white">
-                        <div className="container">
-                        <div className="row text-center">
-                            <div className="col-lg-6 ml-auto mr-auto text-center addSkins--main-container">
-                            <h1 className="display-3 mt-5 pt-5">
-                                Proskins
-                            </h1>
-                            <p className="lead">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem fuga quibusdam necessitatibus corrupti dolorem id!
-                            </p>
-                            <a href="#skins" className="btn btn-outline-secondary btn-lg text-white">
-                                <i className="fas fa-arrow-right"></i><span> View Skins</span>
-                            </a>
-                            </div>
-                            
+                    <div className="primary-overlay">
+                        <div className="container addSkins--container">
+                            <Card className="addSkins--card">
+                                <CardHeader>Login</CardHeader>
+                                <CardBody>
+                                    <Form>
+                                        <FormGroup>
+                                            <Label className="col-md-12 text-left p-0">Email</Label>
+                                            <Input className="col-md-12" type="email" placeholder="Enter your email..." />
+                                        </FormGroup>
+                                        <FormGroup>
+                                            <Label className="col-md-12 text-left p-0">Password</Label>
+                                            <Input type="password" placeholder="Enter your password..." />
+                                        </FormGroup>
+                                    </Form>
+                                </CardBody>
+
+                                <CardFooter>
+                                    <Button className="addSkins--button" color="primary" outline>Login</Button>
+                                </CardFooter>
+                            </Card>
                         </div>
-                        </div>
+                    
+
                     </div>
                 </section>
             </div>

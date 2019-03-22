@@ -1,11 +1,11 @@
 #addSkins {
     position: relative;
     margin-top: 95px;
-    background: url(../resources/cs-go.jpg);
+    /* background: url(../resources/cs-go.jpg); */
     min-height: 600px;
     background-position: 50% 20%;  }
     #addSkins .primary-overlay {
-      background: #343a40;
+      /* background: #343a40; */
       opacity: .8;
       position: absolute;
       height: 100%;
@@ -14,6 +14,11 @@
       left: 0; }
 
 
-.addSkins--main-container {
-  transform: translateY(60px);
+.addSkins--card {
+  max-width: 400px !important;
+  margin: 100px auto;
+}
+
+.addSkins--button {
+  width: 100%;
 }
