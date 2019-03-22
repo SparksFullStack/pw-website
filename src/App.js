@@ -1,41 +1,22 @@
+// * TODO
+// Add link to card image
+// Display a set amount of previous users then have the dropdown
+// Add admin login modal
+// Add skin adding modal
+
 import React, { Component, Fragment } from 'react';
-import logo from './logo.svg';
+import { Route } from 'react-router-dom';
 import './App.css';
 
-import Header from './components/Header';
-import Showcase from './components/Showcase';
-import Ads from './components/Ads';
-import Products from './components/Products';
-import PopupModal from './components/PopupModal';
-import Footer from './components/Footer';
+import Home from './components/Home';
+
+
 
 class App extends Component {
-  state = {
-    modalState: {
-      isOpen: false,
-      modalType: ""
-    }
-  }
-
-  toggleModal = (modalType) => {
-    console.log(modalType);
-    if (modalType) {
-      this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType }});
-    } else {
-      this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType: "" }});
-    }
-  }
-
-
   render() {
     return (
       <div className="App">
-        <Header toggle={this.toggleModal} />
-        <Showcase />
-        <Ads />
-        <Products toggleModal={this.toggleModal} />
-        <Footer />
-        <PopupModal toggle={this.toggleModal} isOpen={this.state.modalState.isOpen} modalType={this.state.modalState.modalType} />
+        <Route path="/" exact component={Home} />
       </div>
     );
   }

@@ -8,10 +8,6 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem 
 } from 'reactstrap';
 
 class Header extends Component {
@@ -39,6 +35,9 @@ class Header extends Component {
                             </NavItem>
                             <NavItem>
                                 <NavLink className="navlink--about" onClick={() => this.props.toggle('about')}>About</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/add_skins" className="navlink--about">Admin</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
