@@ -6,3 +6,9 @@
     .navbar .nav-item {
       font-size: 1.4rem;
       padding-right: 1.4rem; }
+
+@media screen and (max-width: 767px){
+  .header--navbar {
+    padding-bottom: 1.9rem !important;
+  }
+}

@@ -25,8 +25,8 @@ class Header extends Component {
 
     render() {
         return (
-            <header>
-                <Navbar className="fixed-top py-4" color="light" light expand="md">
+            <header className="container">
+                <Navbar className="fixed-top py-4 header--navbar" color="light" light expand="md">
                     <NavbarBrand href="/">Proskins</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
