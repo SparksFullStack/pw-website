@@ -13,7 +13,9 @@ import {
     ButtonDropdown, 
     DropdownToggle, 
     DropdownMenu, 
-    DropdownItem
+    DropdownItem,
+    ListGroup,
+    ListGroupItem
 } from 'reactstrap';
 
 class SkinCard extends Component {
@@ -32,16 +34,22 @@ class SkinCard extends Component {
                 <CardHeader>
                     <CardTitle className="products--card-title">Karambit | Doppler (Factory New)</CardTitle>
                 </CardHeader>
-                <CardImg className="products--card-image" top width="100%" src="http://cdn.steamcommunity.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20hPbkI7PYhG5u5cRjiOXE_JbwjGu4ohQ0J3egI4ORcQNqYw3W8la5w-frgJK77ZXKwCQysyVwtnbayxKzhxlIarRum7XAHvqFh2jA=/200fx200f'" alt="Card image cap" />
+                <CardImg onClick={() => this.props.toggleModal('skin')} className="products--card-image" top width="100%" src="http://cdn.steamcommunity.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20hPbkI7PYhG5u5cRjiOXE_JbwjGu4ohQ0J3egI4ORcQNqYw3W8la5w-frgJK77ZXKwCQysyVwtnbayxKzhxlIarRum7XAHvqFh2jA=/200fx200f'" alt="Card image cap" />
                 <hr />
                 <CardBody className="products--card-body">
-                    <Button className="products--buttons" color="success">Buy now</Button>
-                    <Button onClick={() => this.props.toggleModal('skin')} className="products--buttons" outline>Info</Button>
-                </CardBody>
-                <CardFooter className="products--card-footer">
+                    <h6 className="products--card-body--header text-secondary">Previous Owners</h6>
+                    
+                    <ListGroup className="products--card-list">
+                        <ListGroupItem>Neo</ListGroupItem>
+                        <ListGroupItem>Tarik</ListGroupItem>
+                        <ListGroupItem>Guardian</ListGroupItem>
+                        <ListGroupItem>S1mple</ListGroupItem>
+                        <ListGroupItem>JW</ListGroupItem>
+                    </ListGroup>
+
                     <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                         <DropdownToggle caret>
-                            Previous Owners
+                            All Previous Owners
                         </DropdownToggle>
                         <DropdownMenu>
                             <DropdownItem>Neo</DropdownItem>
@@ -56,7 +64,12 @@ class SkinCard extends Component {
                             <DropdownItem>M0e</DropdownItem>
                         </DropdownMenu>
                     </ButtonDropdown>
+                </CardBody>
+                <CardFooter className="products--card-footer">
                     
+                    
+                    <Button className="products--buttons" color="success">Buy now</Button>
+                    <Button onClick={() => this.props.toggleModal('skin')} className="products--buttons" outline>Info</Button>
                 </CardFooter>
             </Card>
         )

@@ -2,6 +2,29 @@
     margin-bottom: 0 !important;
 }
 
+.products--card-body {
+    flex-direction: column;
+}
+
+.products--card-body--header {
+    /* border-bottom: 1px solid black !important;
+    width: 150px;
+    margin: 0 auto; */
+}
+
+.products--card-list {
+    margin-bottom: 8px !important;
+}
+
+.products--card-image {
+    cursor: pointer;
+}
+
 .products--card-image + hr {
     margin-bottom: 0;
+}
+
+.products--card-footer {
+    display: flex;
+    justify-content: space-around;
 }
