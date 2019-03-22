@@ -4,7 +4,7 @@ import './Ads.css';
 class Ads extends Component {
   render() {
     return (
-        <section id="boxes" class="py-5">
+        <section id="boxes" className="py-5">
         <div className="container">
           <div className="row">
             <div className="col-md-4 card--container">

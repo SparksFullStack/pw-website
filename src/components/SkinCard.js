@@ -36,7 +36,7 @@ class SkinCard extends Component {
                 <hr />
                 <CardBody className="products--card-body">
                     <Button className="products--buttons" color="primary">Buy now</Button>
-                    <Button className="products--buttons" outline>Info</Button>
+                    <Button onClick={() => this.props.toggleModal('skin')} className="products--buttons" outline>Info</Button>
                 </CardBody>
                 <CardFooter className="products--card-footer">
                     <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>

@@ -10,25 +10,25 @@ class Products extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                    <div class="products--header mb-5">
-                        <h1 class="text-primary pb-3">
+                    <div className="products--header mb-5">
+                        <h1 className="text-primary pb-3">
                             Premium Skins
                         </h1>
-                        <p class="lead pb-3">The best skins on the market</p>
+                        <p className="lead pb-3">The best skins on the market</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="row products--cards row">
-                    <SkinCard />
-                    <SkinCard />
-                    <SkinCard />
+                    <SkinCard toggleModal={this.props.toggleModal} />
+                    <SkinCard toggleModal={this.props.toggleModal} />
+                    <SkinCard toggleModal={this.props.toggleModal} />
                 </div>  
 
                 <div className="row products--cards row">
-                    <SkinCard />
-                    <SkinCard />
-                    <SkinCard />
+                    <SkinCard toggleModal={this.props.toggleModal} />
+                    <SkinCard toggleModal={this.props.toggleModal} />
+                    <SkinCard toggleModal={this.props.toggleModal} />
                 </div>
             </div>
         </section>

@@ -17,6 +17,7 @@ class App extends Component {
   }
 
   toggleModal = (modalType) => {
+    console.log(modalType);
     if (modalType) {
       this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType }});
     } else {
@@ -31,7 +32,7 @@ class App extends Component {
         <Header toggle={this.toggleModal} />
         <Showcase />
         <Ads />
-        <Products />
+        <Products toggleModal={this.toggleModal} />
         <PopupModal toggle={this.toggleModal} isOpen={this.state.modalState.isOpen} modalType={this.state.modalState.modalType} />
       </div>
     );

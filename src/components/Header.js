@@ -38,7 +38,7 @@ class Header extends Component {
                                 <NavLink href="#skins">Skins</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="navlink--about" onClick={this.props.toggle}>About</NavLink>
+                                <NavLink className="navlink--about" onClick={() => this.props.toggle('about')}>About</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
