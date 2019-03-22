@@ -8,7 +8,7 @@ class Showcase extends Component {
                 <div className="primary-overlay text-white">
                     <div className="container">
                     <div className="row text-center">
-                        <div className="col-lg-6 ml-auto mr-auto text-center">
+                        <div className="col-lg-6 ml-auto mr-auto text-center showcase--main-container">
                         <h1 className="display-3 mt-5 pt-5">
                             Proskins
                         </h1>

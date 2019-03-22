@@ -35,7 +35,7 @@ class SkinCard extends Component {
                 <CardImg className="products--card-image" top width="100%" src="http://cdn.steamcommunity.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20hPbkI7PYhG5u5cRjiOXE_JbwjGu4ohQ0J3egI4ORcQNqYw3W8la5w-frgJK77ZXKwCQysyVwtnbayxKzhxlIarRum7XAHvqFh2jA=/200fx200f'" alt="Card image cap" />
                 <hr />
                 <CardBody className="products--card-body">
-                    <Button className="products--buttons" color="primary">Buy now</Button>
+                    <Button className="products--buttons" color="success">Buy now</Button>
                     <Button onClick={() => this.props.toggleModal('skin')} className="products--buttons" outline>Info</Button>
                 </CardBody>
                 <CardFooter className="products--card-footer">
