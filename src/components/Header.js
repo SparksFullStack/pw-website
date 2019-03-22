@@ -1,27 +1,45 @@
 import React, { Component } from 'react';
 import "./Header.css";
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem 
+} from 'reactstrap';
 
 class Header extends Component {
+    state = {
+        isOpen: false
+    }
+
+    toggle = () => {
+        this.setState({ isOpen: !this.state.isOpen });
+    }
+
     render() {
         return (
             <header>
-                <nav className="navbar navbar-expand-md navbar-light fixed-top py-4">
-                <div className="container">
-                    <a href="#root" className="navbar-brand">
-                    <h3 className="d-inline align-middle">Proskins</h3>
-                    </a>
-                    <div className="collapse navbar-collapse" id="navbarCollapse">
-                    <ul className="navbar-nav ml-auto">
-                        <li className="nav-item">
-                            <a href="#root" className="nav-link">Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="#skins" className="nav-link">Showcase</a>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                </nav>
+                <Navbar className="fixed-top py-4" color="light" light expand="md">
+                    <NavbarBrand href="/">Proskins</NavbarBrand>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink href="#root">Home</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="#skins">Skins</NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
             </header>
             )
         }

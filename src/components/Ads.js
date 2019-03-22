@@ -33,15 +33,6 @@ class Ads extends Component {
                 </div>
               </div>
             </div>
-      
-            {/* <div className="col-md-3">
-              <div className="card text-center bg-primary text-white">
-                <div className="card-body">
-                  <h3>Ads go here</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, laudantium?</p>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
