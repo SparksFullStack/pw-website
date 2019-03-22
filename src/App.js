@@ -1,8 +1,12 @@
 // * TODO
 // Add link to card image
 // Display a set amount of previous users then have the dropdown
-// Add admin login modal
-// Add skin adding modal
+// Add admin login page
+// Add skin adding page
+// Add login functionality
+// Add create skin functionality
+// Add issue JWT functionality
+// Add JWT checking for login status
 
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
