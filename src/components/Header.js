@@ -19,6 +19,35 @@ class Header extends Component {
         this.setState({ isOpen: !this.state.isOpen });
     }
 
+    handleRenderNavItems = () => {
+        if (this.props.page === 'home'){
+            return (
+                <Nav className="ml-auto" navbar>
+                    <NavItem>
+                        <NavLink href="#root">Home</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="#skins">Skins</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="navlink--about" onClick={() => this.props.toggle('about')}>About</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/add_skins" className="navlink--about">Admin</NavLink>
+                    </NavItem>
+                </Nav>
+            )
+        } else if (this.props.page === 'admin') {
+            return (
+                <Nav className="ml-auto" navbar>
+                    <NavItem>
+                        <NavLink href="/">Home</NavLink>
+                    </NavItem>
+                </Nav>
+            )
+        }
+    }
+
     render() {
         return (
             <header className="container">
@@ -26,20 +55,7 @@ class Header extends Component {
                     <NavbarBrand href="/">Proskins</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink href="#root">Home</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="#skins">Skins</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="navlink--about" onClick={() => this.props.toggle('about')}>About</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="/add_skins" className="navlink--about">Admin</NavLink>
-                            </NavItem>
-                        </Nav>
+                        {this.handleRenderNavItems()}
                     </Collapse>
                 </Navbar>
             </header>

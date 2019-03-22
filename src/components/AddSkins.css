@@ -1,0 +1,19 @@
+#addSkins {
+    position: relative;
+    margin-top: 95px;
+    background: url(../resources/cs-go.jpg);
+    min-height: 600px;
+    background-position: 50% 20%;  }
+    #addSkins .primary-overlay {
+      background: #343a40;
+      opacity: .8;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0; }
+
+
+.addSkins--main-container {
+  transform: translateY(60px);
+}

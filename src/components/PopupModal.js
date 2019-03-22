@@ -19,7 +19,7 @@ class PopupModal extends Component {
             )
         } else return (
             <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="popupModal">
-                <ModalHeader toggle={this.toggle}>About Item</ModalHeader>
+                <ModalHeader toggle={this.props.toggle}>About Item</ModalHeader>
                 <ModalBody className="text-center">
                     <img src="http://cdn.steamcommunity.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20hPbkI7PYhG5u5cRjiOXE_JbwjGu4ohQ0J3egI4ORcQNqYw3W8la5w-frgJK77ZXKwCQysyVwtnbayxKzhxlIarRum7XAHvqFh2jA=/200fx200f" alt="Item photo" />
                     <p>Item info goes here</p>
@@ -33,6 +33,7 @@ class PopupModal extends Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div className="container">
                 {this.handleRenderModalType()}

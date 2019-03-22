@@ -8,31 +8,16 @@ import PopupModal from './PopupModal';
 import Footer from './Footer';
 
 class Home extends Component {
-    state = {
-        modalState: {
-          isOpen: false,
-          modalType: ""
-        }
-      }
-    
-    toggleModal = (modalType) => {
-        console.log(modalType);
-        if (modalType) {
-            this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType }});
-        } else {
-            this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType: "" }});
-        }
-    }
-
     render() {
+        console.log(this.props);
         return (
             <div id="home">
-                <Header toggle={this.toggleModal} />
+                <Header page='home' toggle={this.props.toggleModal} />
                 <Showcase />
                 <Ads />
-                <Products toggleModal={this.toggleModal} />
+                <Products toggleModal={this.props.toggleModal} />
                 <Footer />
-                <PopupModal toggle={this.toggleModal} isOpen={this.state.modalState.isOpen} modalType={this.state.modalState.modalType} />
+                <PopupModal toggle={this.props.toggleModal} isOpen={this.props.modalState.isOpen} modalType={this.props.modalState.modalType} />
             </div>
         )
     }
