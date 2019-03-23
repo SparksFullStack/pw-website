@@ -38,7 +38,7 @@ class AdminLogin extends Component {
         axios.post('http://localhost:3001/admin/login', { username, password })
             .then(res => {
                 localStorage.setItem('JWT', res.data.JWT);
-                this.setState({ redirect: true, alertState: { isOpen: true, text: ""} });
+                this.setState({ redirect: true, alertState: { isOpen: true, text: "default alert text"} });
             })
             .catch(err => {
                 console.log(err);

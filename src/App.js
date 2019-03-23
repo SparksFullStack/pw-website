@@ -15,6 +15,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import AdminLogin from './components/AdminLogin';
+import AddSkins from './components/AddSkins';
 
 
 
@@ -40,7 +41,7 @@ class App extends Component {
       <div className="App">
         <Route path='/' exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState}/>} />
         <Route path='/login' exact component={AdminLogin} />
-        <Route path='/admin' exact component={() => <h1>cheesedick</h1>} />
+        <Route path='/admin' exact component={AddSkins} />
       </div>
     );
   }
