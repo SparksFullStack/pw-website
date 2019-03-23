@@ -72,7 +72,7 @@ class Header extends Component {
         return (
             <header>
                 <Navbar id="navbar-main" className={this.state.scrolling ? "fixed-top navbar-main__scrolling header--navbar" : "fixed-top py-4 header--navbar"} color="light" light expand="md">
-                    <NavbarBrand >Proskins</NavbarBrand>
+                    <NavbarBrand href="./">Proskins</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         {this.handleRenderNavItems()}

@@ -12,7 +12,7 @@
 // Add background image for skin
 // Add searching/sorting
 // Add thumbnails for previous users
-// Shrink Nav on Scroll
+// X Shrink Nav on Scroll
 
 
 // * Future Improvements
@@ -22,7 +22,6 @@ import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 
-import Header from './components/Header';
 import Home from './components/Home';
 import AdminLogin from './components/AdminLogin';
 import AddSkins from './components/AddSkins';
