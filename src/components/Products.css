@@ -32,3 +32,16 @@
     width: 50%;
     margin: auto;
     border-bottom: 1px solid #ddd; }
+
+
+.pagination-buttons--container {
+    display: flex;
+    max-width: 450px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.pagination-buttons {
+    width: 100px;
+    margin: 0 20px;
+}

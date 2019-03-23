@@ -19,6 +19,7 @@
 // * Future Improvements
 // Make success message time out when new skin is added
 // Add a loading message when first starting the page up
+// Add a message when you reach the end of the pagination
 
 // * Cross Browser Compatibility
 // Trigger shrinking on Safari and Mobile

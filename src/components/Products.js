@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import "./Products.css";
 import SkinCard from './SkinCard';
-import { Card, CardTitle, CardBody, CardHeader, CardFooter, CardText, Button } from 'reactstrap';
+import { Card, CardTitle, CardBody, CardHeader, CardFooter, CardText, Button,
+    Pagination,
+    PaginationItem,
+    PaginationLink
+} from 'reactstrap';
 
 class Products extends Component {
 
@@ -9,6 +13,7 @@ class Products extends Component {
         skinGroups: {},
         currentSkinGroup: 1,
         skinsLoaded: false,
+        largestGroup: 1
     }
 
     componentDidMount() {
@@ -22,6 +27,7 @@ class Products extends Component {
 
     handleSortSkins = () => {
         let currentSkinGroup = 1;
+        let largestGroup = 1;
         let iterator = 1;
         const skinGroups = {};
         this.props.skins.forEach(skin => {
@@ -33,16 +39,16 @@ class Products extends Component {
 
             if (iterator === 6) {
                 currentSkinGroup++;
+                largestGroup++;
                 iterator = 1;
             } else iterator++;
         });
 
-        this.setState({ skinGroups }, () => console.log(this.state.skinGroups));
+        this.setState({ skinGroups, largestGroup }, () => console.log(this.state));
     }
 
     handleRenderSkins = () => {
         const { skinGroups, currentSkinGroup } = this.state;
-        console.log(skinGroups[currentSkinGroup])
         return skinGroups[currentSkinGroup].map(skin => {
             return <SkinCard skinState={skin} />
         })
@@ -79,7 +85,12 @@ class Products extends Component {
                 <div className="row products--cards row">
                     {this.state.skinsLoaded ? this.handleRenderSkins() : <p>Loading skins...</p>}
                 </div>  
-                <Button onClick={() => this.handleChangeSkinGroup('+')}>Pagination</Button>
+
+                <div className="pagination-buttons--container">
+                    <Button onClick={() => this.handleChangeSkinGroup('-')} outline color="primary" className="pagination-buttons">Previous</Button>
+                    <Button onClick={() => this.handleChangeSkinGroup('+')} outline color="primary" className="pagination-buttons">Next</Button>     
+                </div>
+
             </div>
         </section>
     )
