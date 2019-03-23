@@ -33,7 +33,6 @@ class PopupModal extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="container">
                 {this.handleRenderModalType()}

@@ -9,13 +9,12 @@ import Footer from './Footer';
 
 class Home extends Component {
     render() {
-        console.log(this.props);
         return (
             <div id="home">
                 <Header page='home' toggle={this.props.toggleModal} />
                 <Showcase />
                 <Ads />
-                <Products toggleModal={this.props.toggleModal} />
+                <Products skins={this.props.skins} toggleModal={this.props.toggleModal} />
                 <Footer />
                 <PopupModal toggle={this.props.toggleModal} isOpen={this.props.modalState.isOpen} modalType={this.props.modalState.modalType} />
             </div>

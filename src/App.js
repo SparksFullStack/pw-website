@@ -9,14 +9,16 @@
 // X Add JWT checking for login status
 // Add real data instead of dummy data
 // Add pagination
-// Add background image for skin
+// X Add background image for skin
 // Add searching/sorting
 // Add thumbnails for previous users
 // X Shrink Nav on Scroll
+// Add delete skins route
 
 
 // * Future Improvements
 // Make success message time out when new skin is added
+// Add a loading message when first starting the page up
 
 // * Cross Browser Compatibility
 // Trigger shrinking on Safari and Mobile
@@ -28,6 +30,7 @@ import './App.css';
 import Home from './components/Home';
 import AdminLogin from './components/AdminLogin';
 import AddSkins from './components/AddSkins';
+import axios from 'axios';
 
 
 
@@ -36,7 +39,13 @@ class App extends Component {
     modalState: {
       isOpen: false,
       modalType: ""
-    }
+    },
+  }
+
+  componentDidMount() {
+    axios.get('https://proskins-back.herokuapp.com/skins')
+      .then(res => this.setState({ skins: res.data.skins }))
+      .catch(err => console.log(err));
   }
 
   toggleModal = (modalType) => {
@@ -51,7 +60,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route path='/' exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState}/>} />
+        <Route path='/' exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState} skins={this.state.skins}/>} />
         <Route path='/login' exact component={AdminLogin} />
         <Route path='/admin' exact component={AddSkins} />
       </div>
