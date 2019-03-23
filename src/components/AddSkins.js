@@ -28,13 +28,14 @@ class AddSkins extends Component {
             skin_name: "",
             skin_link: "",
             buy_link: "",
-            owners: ['asdf', "fdas"],
+            owners: [],
             tempOwner: "",
         },
         redirect: false,
         alertState: {
             isOpen: false,
             text: "default alert text",
+            color: "danger"
         }
     }
 
@@ -48,7 +49,6 @@ class AddSkins extends Component {
     handleSkinState = (inputType) => (event) => {
         const newSkinState = Object.assign({}, this.state.skinState);
         newSkinState[inputType] = event.target.value; 
-
         this.setState({ skinState: newSkinState });
     }
 
@@ -61,7 +61,7 @@ class AddSkins extends Component {
 
     handleRenderOwners = () => {
         return this.state.skinState.owners.map(owner => {
-            return <span>{owner}, </span>
+            return <span key={owner}>{owner}, </span>
         });
     }
 
@@ -72,6 +72,35 @@ class AddSkins extends Component {
         newSkinState.owners = newOwnersArray;
         newSkinState.tempOwner = "";
         this.setState({ skinState: newSkinState });
+    }
+
+    handleSubmitSkin = () => {
+        const { skinState } = this.state;
+        if (skinState.skin_image === "" || skinState.skin_name === "" || skinState.skin_link === "" || skinState.buy_link === "" || !skinState.owners[0]){
+            this.setState({
+                alertState: {
+                    isOpen: true,
+                    text: "Please enter a value for all fields",
+                    color: "danger"
+                }
+            })
+        } else {
+            const { skin_image, skin_name, skin_link, buy_link, owners } = this.state.skinState;
+            axios.post('http://localhost:3001/skins/add_skin', { skin_image, skin_name, skin_link, buy_link, owners })
+            .then(res => {
+                this.setState({
+                    alertState: {
+                        isOpen: true,
+                        color: 'success',
+                        text: "Skin successfully added"
+                    }
+                })
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        }
+        
     }
 
     handleRedirect = () => {
@@ -89,7 +118,7 @@ class AddSkins extends Component {
                                 <Card className="adminLogin--card">
                                     <CardHeader>Add a Skin</CardHeader>
                                     <CardBody>
-                                        <Alert color="danger" isOpen={this.state.alertState.isOpen}>{this.state.alertState.text}</Alert>
+                                        <Alert color={this.state.alertState.color} isOpen={this.state.alertState.isOpen}>{this.state.alertState.text}</Alert>
                                         
                                         <Form onSubmit={this.handleLogin}>
                                             <FormGroup>
@@ -119,7 +148,7 @@ class AddSkins extends Component {
                                     </CardBody>
 
                                     <CardFooter>
-                                        <Button onClick={this.handleLogin} className="adminLogin--button" color="success" outline>Add Skin</Button>
+                                        <Button onClick={this.handleSubmitSkin} className="adminLogin--button" color="success" outline>Add Skin</Button>
                                     </CardFooter>
                                 </Card>
                             </div>

@@ -4,11 +4,15 @@
 // X Add admin login page
 // X Add skin adding page
 // X Add login functionality
-// Add create skin functionality
+// X Add create skin functionality
 // X Add issue JWT functionality
 // X Add JWT checking for login status
 // Add real data instead of dummy data
 // Add pagination
+
+
+// * Future Improvements
+// Make success message time out when new skin is added
 
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
