@@ -39,7 +39,7 @@ class App extends Component {
     return (
       <div className="App">
         <Route path='/' exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState}/>} />
-        <Route path='/add_skins' exact component={AdminLogin} />
+        <Route path='/login' exact component={AdminLogin} />
         <Route path='/admin' exact component={() => <h1>cheesedick</h1>} />
       </div>
     );
