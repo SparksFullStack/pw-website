@@ -13,15 +13,31 @@ import {
 class Header extends Component {
     state = {
         isOpen: false,
-        scrolling: true
+        scrolling: false
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleNavScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleNavScroll);
     }
 
     toggle = () => {
         this.setState({ isOpen: !this.state.isOpen });
     }
 
-    handleNavScroll = () => {
-        this.setState({ scrolling: !this.state.scrolling });
+    handleNavScroll = (event) => {
+        let scrollTop = document.documentElement.scrollTop;
+        // let itemTranslate = Math.min(0, (scrollTop / 3) - 60);
+        console.log(scrollTop);
+        if (scrollTop > 35) {
+            this.setState({ scrolling: true });
+        } else {
+            this.setState({ scrolling: false });
+        }
+        
     }
 
     handleRenderNavItems = () => {
@@ -51,16 +67,6 @@ class Header extends Component {
                 </Nav>
             )
         }
-    }
-
-    handleScrolling = () => {
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            document.getElementById("navbar-main").style.padding = "1rem";
-            // document.getElementById("logo").style.fontSize = "25px";
-          } else {
-            document.getElementById("navbar").style.padding = "80px 10px";
-            document.getElementById("logo").style.fontSize = "35px";
-          }
     }
 
     render() {
