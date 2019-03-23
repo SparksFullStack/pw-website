@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
+import jsonwebtoken from 'jsonwebtoken';
 import { Redirect } from 'react-router-dom';
 import { 
     Card, 
@@ -35,6 +36,13 @@ class AddSkins extends Component {
         }
     }
 
+    componentWillMount() {
+        let token = localStorage.getItem('JWT');
+        if (!token || !jsonwebtoken.verify(token, process.env.REACT_APP_JWT_SECRET)){
+            this.setState({ redirect: true });
+        }
+    }
+
     handleSkinState = (inputType) => (event) => {
         const newSkinState = Object.assign({}, this.state.skinState);
         if (inputType !== 'owners') {
@@ -56,7 +64,7 @@ class AddSkins extends Component {
     handleRedirect = () => {
         if (this.state.redirect) {
             return (
-                <Redirect to='/admin' />
+                <Redirect to='/login' />
             )
         } else {
             return (
@@ -87,7 +95,7 @@ class AddSkins extends Component {
                                                 <Label className="col-md-12 text-left p-0">Buy Link</Label>
                                                 <Input onChange={this.handleSkinState('buy_link')} value={this.state.password} type="password" placeholder="Enter the purchase link..." />
                                             </FormGroup>
-                                            <FormGroup>
+                                            <FormGroup style={{ marginBottom: 0 }}>
                                                 <Label className="col-md-12 text-left p-0">Previous Owners</Label>
                                                 <Input onChange={this.handleSkinState('username')} value={this.state.username} className="col-md-12" type="username" placeholder="Enter the owners..." />
                                                 <FormText>The owners should each be seperated by a comma and a space like: "owner1, owner2, owner3, etc."</FormText>
