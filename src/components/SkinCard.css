@@ -13,6 +13,12 @@
     left: 25%; */
 }
 
+.products--card-image {
+    max-width: 250px;
+    height: auto;
+    cursor: pointer;
+}
+
 .products--card-image-holder {
     background: url(../resources/skin-background.webp);
     overflow: hidden;
@@ -24,12 +30,6 @@
 
 .products--card-list {
     margin-bottom: 8px !important;
-}
-
-.products--card-image {
-    cursor: pointer;
-    height: 250px;
-    width: auto;
 }
 
 .products--card-image + hr {
