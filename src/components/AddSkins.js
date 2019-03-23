@@ -65,6 +65,15 @@ class AddSkins extends Component {
         });
     }
 
+    handleAddOwner = (event) => {
+        event.preventDefault();
+        const newOwnersArray = this.state.skinState.owners.concat(this.state.skinState.tempOwner);
+        const newSkinState = Object.assign({}, this.state.skinState);
+        newSkinState.owners = newOwnersArray;
+        newSkinState.tempOwner = "";
+        this.setState({ skinState: newSkinState });
+    }
+
     handleRedirect = () => {
         if (this.state.redirect) {
             return (
@@ -100,11 +109,11 @@ class AddSkins extends Component {
                                                 <Input onChange={this.handleSkinState('buy_link')} value={this.state.skinState.buy_link} type="text" placeholder="Enter the purchase link..." />
                                             </FormGroup>
                                             <FormGroup style={{ marginBottom: 0 }}>
-                                                <Label className="col-md-12 text-left p-0">Previous Owners</Label>
+                                                <Label style={{ marginBottom: 0 }} className="col-md-12 text-left p-0">Previous Owners</Label>
+                                                <FormText style={{ textAlign: 'left'}}>Owners added: {this.handleRenderOwners()}</FormText>
                                                 <Input onChange={this.handleSkinState('tempOwner')} value={this.state.skinState.tempOwner} className="col-md-12" type="text" placeholder="Enter the owners..." />
-                                                <Button color="primary">Add Owner</Button>
-                                                <FormText>Owners added: {this.handleRenderOwners()}</FormText>
-                                                <FormText>The owners should each be seperated by a comma and a space like: "owner1, owner2, owner3, etc."</FormText>
+                                                <Button type="button" onClick={this.handleAddOwner} outline style={{ width: '100%', marginTop: '10px' }} color="primary">Add Owner</Button>
+                                                <FormText>Please add owners one at a time</FormText>
                                             </FormGroup>
                                         </Form>
                                     </CardBody>
