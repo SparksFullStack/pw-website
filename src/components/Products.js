@@ -8,7 +8,7 @@ class Products extends Component {
     state = {
         skinGroups: {},
         currentSkinGroup: 1,
-        skinsLoaded: false
+        skinsLoaded: false,
     }
 
     componentDidMount() {
@@ -21,18 +21,18 @@ class Products extends Component {
     }
 
     handleSortSkins = () => {
-        let skinGroup = 1;
+        let currentSkinGroup = 1;
         let iterator = 1;
         const skinGroups = {};
         this.props.skins.forEach(skin => {
-            if (skinGroups[skinGroup]) {
-                skinGroups[skinGroup].push(skin);
+            if (skinGroups[currentSkinGroup]) {
+                skinGroups[currentSkinGroup].push(skin);
             } else {
-                skinGroups[skinGroup] = [skin];
+                skinGroups[currentSkinGroup] = [skin];
             }
 
             if (iterator === 6) {
-                skinGroup++;
+                currentSkinGroup++;
                 iterator = 1;
             } else iterator++;
         });
@@ -42,10 +42,22 @@ class Products extends Component {
 
     handleRenderSkins = () => {
         const { skinGroups, currentSkinGroup } = this.state;
+        console.log(skinGroups[currentSkinGroup])
         return skinGroups[currentSkinGroup].map(skin => {
             return <SkinCard skinState={skin} />
         })
     };
+
+    handleChangeSkinGroup = (increment) => {
+        let newSkinGroup;
+        if (increment === '+' && this.state.currentSkinGroup < 2){
+             newSkinGroup = this.state.currentSkinGroup + 1;
+        } else if (increment === '-' && this.state.currentSkinGroup > 1) {
+            newSkinGroup = this.state.currentSkinGroup - 1;
+        }
+
+        this.setState({ currentSkinGroup: newSkinGroup });
+    }
 
 
 
@@ -67,6 +79,7 @@ class Products extends Component {
                 <div className="row products--cards row">
                     {this.state.skinsLoaded ? this.handleRenderSkins() : <p>Loading skins...</p>}
                 </div>  
+                <Button onClick={() => this.handleChangeSkinGroup('+')}>Pagination</Button>
             </div>
         </section>
     )
