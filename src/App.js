@@ -14,7 +14,7 @@
 // Add thumbnails for previous users
 // X Shrink Nav on Scroll
 // Add delete skins route
-// add standardized height for all images
+// X add standardized height for all images
 
 
 // * Future Improvements

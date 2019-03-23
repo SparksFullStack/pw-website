@@ -15,6 +15,7 @@
 
 .products--card-image-holder {
     background: url(../resources/skin-background.webp);
+    overflow: hidden;
 }
 
 .products--card-image-holder + hr {
