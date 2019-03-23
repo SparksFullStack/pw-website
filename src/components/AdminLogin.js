@@ -35,7 +35,7 @@ class AdminLogin extends Component {
 
     handleLogin = () => {
         const { username, password } = this.state;
-        axios.post('http://localhost:3001/admin/login', { username, password })
+        axios.post('https://proskins-back.herokuapp.com/admin/login', { username, password })
             .then(res => {
                 localStorage.setItem('JWT', res.data.JWT);
                 this.setState({ redirect: true, alertState: { isOpen: true, text: "default alert text"} });

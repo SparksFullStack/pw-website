@@ -86,7 +86,8 @@ class AddSkins extends Component {
             })
         } else {
             const { skin_image, skin_name, skin_link, buy_link, owners } = this.state.skinState;
-            axios.post('http://localhost:3001/skins/add_skin', { skin_image, skin_name, skin_link, buy_link, owners })
+        
+            axios.post(`https://proskins-back.herokuapp.com/skins/add_skin`, { skin_image, skin_name, skin_link, buy_link, owners })
             .then(res => {
                 this.setState({
                     alertState: {
