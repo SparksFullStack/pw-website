@@ -33,8 +33,10 @@ class SkinCard extends Component {
                 <CardHeader>
                     <CardTitle className="products--card-title">Karambit | Doppler (Factory New)</CardTitle>
                 </CardHeader>
-                <CardImg onClick={() => this.props.toggleModal('skin')} className="products--card-image" top width="100%" src="http://cdn.steamcommunity.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20hPbkI7PYhG5u5cRjiOXE_JbwjGu4ohQ0J3egI4ORcQNqYw3W8la5w-frgJK77ZXKwCQysyVwtnbayxKzhxlIarRum7XAHvqFh2jA=/200fx200f'" alt="Card image cap" />
-                <hr />
+                <div className="products--card-image-holder">
+                    <CardImg onClick={() => this.props.toggleModal('skin')} className="products--card-image" top width="100%" src="http://cdn.steamcommunity.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20hPbkI7PYhG5u5cRjiOXE_JbwjGu4ohQ0J3egI4ORcQNqYw3W8la5w-frgJK77ZXKwCQysyVwtnbayxKzhxlIarRum7XAHvqFh2jA=/200fx200f'" alt="Card image cap" />
+                </div>
+
                 <CardBody className="products--card-body">
                     <h6 className="products--card-body--header text-secondary">Previous Owners</h6>
                     

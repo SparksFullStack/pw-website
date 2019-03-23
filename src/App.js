@@ -18,6 +18,9 @@
 // * Future Improvements
 // Make success message time out when new skin is added
 
+// * Cross Browser Compatibility
+// Trigger shrinking on Safari and Mobile
+
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';

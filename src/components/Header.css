@@ -17,6 +17,8 @@
 }
 
 .navbar-main__scrolling  {
+  -webkit-padding-top: .25rem !important;
+  -webkit-padding-bottom: .25rem !important;
   padding-top: .25rem !important;
   padding-bottom: .25rem !important;
 }

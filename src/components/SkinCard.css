@@ -12,6 +12,14 @@
     margin: 0 auto; */
 }
 
+.products--card-image-holder {
+    background: url(../resources/skin-background.webp);
+}
+
+.products--card-image-holder + hr {
+    margin-top: 0;
+}
+
 .products--card-list {
     margin-bottom: 8px !important;
 }
