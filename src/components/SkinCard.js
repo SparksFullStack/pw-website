@@ -27,25 +27,37 @@ class SkinCard extends Component {
         this.setState({ dropdownOpen: !this.state.dropdownOpen });
     }
 
+    handleRenderOwners = (type) => {
+        let listLength = this.props.skinState.owners.length;
+        if (type === 'main'){
+            return this.props.skinState.owners.map((owner, index) => {
+                if (index < listLength && index <= 4){
+                    return <ListGroupItem>{owner}</ListGroupItem>
+                }
+            })
+        } else {
+            return this.props.skinState.map(owner => {
+                return <DropdownItem>{owner}</DropdownItem>
+            })
+        }
+    }
+
     render() {
+        console.log(this.props.skinState);
         return (
             <Card style={{ maxWidth: '280px' }} className="products--card col-md-4">
                 <CardHeader>
-                    <CardTitle className="products--card-title">Karambit | Doppler (Factory New)</CardTitle>
+                    <CardTitle className="products--card-title">{this.props.skinState['skin_name']}</CardTitle>
                 </CardHeader>
                 <div className="products--card-image-holder">
-                    <CardImg onClick={() => this.props.toggleModal('skin')} className="products--card-image" top width="100%" src="http://cdn.steamcommunity.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20hPbkI7PYhG5u5cRjiOXE_JbwjGu4ohQ0J3egI4ORcQNqYw3W8la5w-frgJK77ZXKwCQysyVwtnbayxKzhxlIarRum7XAHvqFh2jA=/200fx200f'" alt="Card image cap" />
+                    <CardImg onClick={() => this.props.toggleModal('skin')} className="products--card-image" top width="100%" src={this.props.skinState['skin_image']} alt="Card image cap" />
                 </div>
 
                 <CardBody className="products--card-body">
                     <h6 className="products--card-body--header text-secondary">Previous Owners</h6>
                     
                     <ListGroup className="products--card-list">
-                        <ListGroupItem>Neo</ListGroupItem>
-                        <ListGroupItem>Tarik</ListGroupItem>
-                        <ListGroupItem>Guardian</ListGroupItem>
-                        <ListGroupItem>S1mple</ListGroupItem>
-                        <ListGroupItem>JW</ListGroupItem>
+                        {this.props.skinState ? this.handleRenderOwners('main') : ""}
                     </ListGroup>
 
                     <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -69,7 +81,7 @@ class SkinCard extends Component {
                 <CardFooter className="products--card-footer">
                     
                     
-                    <Button onClick={() => this.props.toggleModal('skin')} className="products--buttons" outline>Info</Button>
+                    <Button  onClick={() => this.props.toggleModal('skin')} className="products--buttons" outline>Info</Button>
                     <Button className="products--buttons" color="success">Buy now</Button>
                 </CardFooter>
             </Card>

@@ -7,13 +7,14 @@
 // X Add create skin functionality
 // X Add issue JWT functionality
 // X Add JWT checking for login status
-// Add real data instead of dummy data
-// Add pagination
+// X Add real data instead of dummy data
+// X Add pagination
 // X Add background image for skin
 // Add searching/sorting
 // Add thumbnails for previous users
 // X Shrink Nav on Scroll
 // Add delete skins route
+// add standardized height for all images
 
 
 // * Future Improvements

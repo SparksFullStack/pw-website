@@ -4,12 +4,13 @@
 
 .products--card-body {
     flex-direction: column;
+    justify-content: flex-start; 
 }
 
 .products--card-body--header {
-    /* border-bottom: 1px solid black !important;
-    width: 150px;
-    margin: 0 auto; */
+    /* position: absolute;
+    top: 5%;
+    left: 25%; */
 }
 
 .products--card-image-holder {
@@ -26,6 +27,8 @@
 
 .products--card-image {
     cursor: pointer;
+    height: 250px;
+    width: auto;
 }
 
 .products--card-image + hr {
@@ -36,3 +39,4 @@
     display: flex;
     justify-content: space-around;
 }
+
