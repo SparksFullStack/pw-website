@@ -9,6 +9,7 @@
 
 #navbar-main {
   width: 100%;
+  transition: padding-top .2s, padding-bottom .2s;
 }
 
 .navlink--about {

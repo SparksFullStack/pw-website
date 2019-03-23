@@ -30,9 +30,8 @@ class Header extends Component {
 
     handleNavScroll = (event) => {
         let scrollTop = document.documentElement.scrollTop;
-        // let itemTranslate = Math.min(0, (scrollTop / 3) - 60);
-        console.log(scrollTop);
-        if (scrollTop > 35) {
+
+        if (scrollTop > 15) {
             this.setState({ scrolling: true });
         } else {
             this.setState({ scrolling: false });
@@ -73,7 +72,7 @@ class Header extends Component {
         return (
             <header>
                 <Navbar id="navbar-main" className={this.state.scrolling ? "fixed-top navbar-main__scrolling header--navbar" : "fixed-top py-4 header--navbar"} color="light" light expand="md">
-                    <NavbarBrand onClick={this.handleNavScroll}>Proskins</NavbarBrand>
+                    <NavbarBrand >Proskins</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         {this.handleRenderNavItems()}
