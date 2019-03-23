@@ -82,7 +82,7 @@ class Products extends Component {
                     </div>
                 </div>
 
-                <div className="row products--cards row">
+                <div className="products--cards row">
                     {this.state.skinsLoaded ? this.handleRenderSkins() : <p>Loading skins...</p>}
                 </div>  
 
