@@ -1,12 +1,14 @@
 // * TODO
 // X Add link to card image
 // X Display a set amount of previous users then have the dropdown
-// Add admin login page
-// Add skin adding page
-// Add login functionality
+// X Add admin login page
+// X Add skin adding page
+// X Add login functionality
 // Add create skin functionality
-// Add issue JWT functionality
-// Add JWT checking for login status
+// X Add issue JWT functionality
+// X Add JWT checking for login status
+// Add real data instead of dummy data
+// Add pagination
 
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';

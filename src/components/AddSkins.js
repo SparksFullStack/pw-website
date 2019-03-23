@@ -22,12 +22,14 @@ import Header from './Header';
 
 class AddSkins extends Component {
     state = {
+        
         skinState: {
             skin_image: "",
             skin_name: "",
             skin_link: "",
             buy_link: "",
-            owners: [],
+            owners: ['asdf', "fdas"],
+            tempOwner: "",
         },
         redirect: false,
         alertState: {
@@ -45,11 +47,7 @@ class AddSkins extends Component {
 
     handleSkinState = (inputType) => (event) => {
         const newSkinState = Object.assign({}, this.state.skinState);
-        if (inputType !== 'owners') {
-            newSkinState[inputType] = event.target.value;
-        } else {
-            newSkinState.owners.push(event.target.value);
-        }
+        newSkinState[inputType] = event.target.value; 
 
         this.setState({ skinState: newSkinState });
     }
@@ -59,6 +57,12 @@ class AddSkins extends Component {
         newAlertState.isOpen = true;
         newAlertState.text = alertText;
         this.setState({ alertState: newAlertState });
+    }
+
+    handleRenderOwners = () => {
+        return this.state.skinState.owners.map(owner => {
+            return <span>{owner}, </span>
+        });
     }
 
     handleRedirect = () => {
@@ -81,23 +85,25 @@ class AddSkins extends Component {
                                         <Form onSubmit={this.handleLogin}>
                                             <FormGroup>
                                                 <Label className="col-md-12 text-left p-0">Skin Image</Label>
-                                                <Input onChange={this.handleSkinState('skin_image')} value={this.state.username} className="col-md-12" type="username" placeholder="Enter the image's URL..." />
+                                                <Input onChange={this.handleSkinState('skin_image')} value={this.state.skinState.skin_image} className="col-md-12" type="text" placeholder="Enter the image's URL..." />
                                             </FormGroup>
                                             <FormGroup>
                                                 <Label className="col-md-12 text-left p-0">Skin Name</Label>
-                                                <Input onChange={this.handleSkinState('skin_name')} value={this.state.username} className="col-md-12" type="username" placeholder="Enter the skin's name" />
+                                                <Input onChange={this.handleSkinState('skin_name')} value={this.state.skinState.skin_name} className="col-md-12" type="text" placeholder="Enter the skin's name" />
                                             </FormGroup>
                                             <FormGroup>
                                                 <Label className="col-md-12 text-left p-0">Skin Link</Label>
-                                                <Input onChange={this.handleSkinState('skin_link')} value={this.state.password} type="password" placeholder="Enter the skin's URL..." />
+                                                <Input onChange={this.handleSkinState('skin_link')} value={this.state.skinState.skin_link} type="text" placeholder="Enter the skin's URL..." />
                                             </FormGroup>
                                             <FormGroup>
                                                 <Label className="col-md-12 text-left p-0">Buy Link</Label>
-                                                <Input onChange={this.handleSkinState('buy_link')} value={this.state.password} type="password" placeholder="Enter the purchase link..." />
+                                                <Input onChange={this.handleSkinState('buy_link')} value={this.state.skinState.buy_link} type="text" placeholder="Enter the purchase link..." />
                                             </FormGroup>
                                             <FormGroup style={{ marginBottom: 0 }}>
                                                 <Label className="col-md-12 text-left p-0">Previous Owners</Label>
-                                                <Input onChange={this.handleSkinState('username')} value={this.state.username} className="col-md-12" type="username" placeholder="Enter the owners..." />
+                                                <Input onChange={this.handleSkinState('tempOwner')} value={this.state.skinState.tempOwner} className="col-md-12" type="text" placeholder="Enter the owners..." />
+                                                <Button color="primary">Add Owner</Button>
+                                                <FormText>Owners added: {this.handleRenderOwners()}</FormText>
                                                 <FormText>The owners should each be seperated by a comma and a space like: "owner1, owner2, owner3, etc."</FormText>
                                             </FormGroup>
                                         </Form>
