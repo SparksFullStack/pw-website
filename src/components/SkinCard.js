@@ -29,7 +29,6 @@ class SkinCard extends Component {
 
     render() {
         return (
-
             <Card className="products--card col-md-3">
                 <CardHeader>
                     <CardTitle className="products--card-title">Karambit | Doppler (Factory New)</CardTitle>

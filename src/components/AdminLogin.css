@@ -1,4 +1,4 @@
-#addSkins {
+#adminLogin {
     position: relative;
     margin-top: 95px;
     /* background: url(../resources/cs-go.jpg); */
@@ -14,11 +14,11 @@
       left: 0; }
 
 
-.addSkins--card {
+.adminLogin--card {
   max-width: 400px !important;
   margin: 100px auto;
 }
 
-.addSkins--button {
+.adminLogin--button {
   width: 100%;
 }

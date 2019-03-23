@@ -1,6 +1,6 @@
 // * TODO
-// Add link to card image
-// Display a set amount of previous users then have the dropdown
+// X Add link to card image
+// X Display a set amount of previous users then have the dropdown
 // Add admin login page
 // Add skin adding page
 // Add login functionality
@@ -14,7 +14,7 @@ import './App.css';
 
 import Header from './components/Header';
 import Home from './components/Home';
-import AddSkins from './components/AddSkins';
+import AdminLogin from './components/AdminLogin';
 
 
 
@@ -38,8 +38,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route path="/" exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState}/>} />
-        <Route path='/add_skins' exact component={AddSkins} />
+        <Route path='/' exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState}/>} />
+        <Route path='/add_skins' exact component={AdminLogin} />
+        <Route path='/admin' exact component={() => <h1>cheesedick</h1>} />
       </div>
     );
   }
