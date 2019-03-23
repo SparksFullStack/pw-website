@@ -14,7 +14,6 @@
 }
 
 .products--card-image {
-    max-width: 250px;
     height: auto;
     cursor: pointer;
 }

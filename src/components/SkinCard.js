@@ -45,7 +45,7 @@ class SkinCard extends Component {
     render() {
         console.log(this.props.skinState);
         return (
-            <Card style={{ maxWidth: '280px' }} className="products--card col-lg-4">
+            <Card style={{ maxWidth: '280px' }} className="products--card col-sm-4">
                 <CardHeader>
                     <CardTitle className="products--card-title">{this.props.skinState['skin_name']}</CardTitle>
                 </CardHeader>
