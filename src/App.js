@@ -9,6 +9,10 @@
 // X Add JWT checking for login status
 // Add real data instead of dummy data
 // Add pagination
+// Add background image for skin
+// Add searching/sorting
+// Add thumbnails for previous users
+// Shrink Nav on Scroll
 
 
 // * Future Improvements
