@@ -49,7 +49,7 @@ class Products extends Component {
     handleRenderSkins = () => {
         const { skinGroups, currentSkinGroup } = this.state;
         return skinGroups[currentSkinGroup].map(skin => {
-            return <SkinCard skinState={skin} />
+            return <SkinCard toggleModal={this.props.toggleModal} skinState={skin} />
         })
     };
 

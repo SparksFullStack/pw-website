@@ -25,8 +25,8 @@ class PopupModal extends Component {
                     <p>Item info goes here</p>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="success" onClick={this.props.toggle}>Buy Now</Button>{' '}
-                    <Button color="secondary" onClick={this.props.toggle}>Close Modal</Button>
+                    <Button className="modal-footer--buttons" color="success" onClick={this.props.toggle}>Buy Now</Button>{' '}
+                    <Button className="modal-footer--buttons" color="secondary" onClick={this.props.toggle}>Close Modal</Button>
                 </ModalFooter>
             </Modal>
         )
