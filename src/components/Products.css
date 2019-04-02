@@ -45,3 +45,9 @@
     width: 100px;
     margin: 0 20px;
 }
+
+.pagination-buttons--link:hover,
+.pagination-buttons--link:active {
+    text-decoration: none;
+    color: #fff;
+}
