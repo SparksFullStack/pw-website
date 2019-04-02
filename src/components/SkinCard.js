@@ -36,7 +36,7 @@ class SkinCard extends Component {
                 }
             })
         } else {
-            return this.props.skinState.map(owner => {
+            return this.props.skinState.owners.map(owner => {
                 return <DropdownItem>{owner}</DropdownItem>
             })
         }
@@ -65,16 +65,7 @@ class SkinCard extends Component {
                             All Previous Owners
                         </DropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem>Neo</DropdownItem>
-                            <DropdownItem>Tarik</DropdownItem>
-                            <DropdownItem>Guardian</DropdownItem>
-                            <DropdownItem>S1mple</DropdownItem>
-                            <DropdownItem>JW</DropdownItem>
-                            <DropdownItem>Summit1G</DropdownItem>
-                            <DropdownItem>Shroud</DropdownItem>
-                            <DropdownItem>Pasha</DropdownItem>
-                            <DropdownItem>DaZeD</DropdownItem>
-                            <DropdownItem>M0e</DropdownItem>
+                            {this.props.skinState ? this.handleRenderOwners() : ""}
                         </DropdownMenu>
                     </ButtonDropdown>
                 </CardBody>
