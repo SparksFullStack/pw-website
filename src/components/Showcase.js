@@ -19,7 +19,6 @@ class Showcase extends Component {
                             <i className="fas fa-arrow-right"></i><span> View Skins</span>
                         </a>
                         </div>
-                        
                     </div>
                     </div>
                 </div>

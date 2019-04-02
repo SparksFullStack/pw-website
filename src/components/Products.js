@@ -13,7 +13,6 @@ class Products extends Component {
         skinGroups: {},
         currentSkinGroup: 1,
         skinsLoaded: false,
-        largestGroup: 1
     }
 
     componentDidMount() {
@@ -56,13 +55,16 @@ class Products extends Component {
 
     handleChangeSkinGroup = (increment) => {
         let newSkinGroup;
-        if (increment === '+' && this.state.currentSkinGroup < 2){
+        let groupSet = false;
+        if (increment === '+' && this.state.currentSkinGroup < this.state.largestGroup){
              newSkinGroup = this.state.currentSkinGroup + 1;
+             groupSet = true;
         } else if (increment === '-' && this.state.currentSkinGroup > 1) {
             newSkinGroup = this.state.currentSkinGroup - 1;
+            groupSet = true;
         }
 
-        this.setState({ currentSkinGroup: newSkinGroup });
+        if (groupSet) this.setState({ currentSkinGroup: newSkinGroup });
     }
 
 
@@ -87,9 +89,9 @@ class Products extends Component {
                 </div>  
 
                 <div className="pagination-buttons--container">
-                    <Button onClick={() => this.handleChangeSkinGroup('-')} outline color="primary" className="pagination-buttons">Previous</Button>
-                    <Button onClick={() => this.handleChangeSkinGroup('+')} outline color="primary" className="pagination-buttons">Next</Button>     
-                </div>
+                    <Button onClick={() => this.handleChangeSkinGroup('-')} outline color="primary" className="pagination-buttons"><a href="#skins" className="pagination-buttons--link">Previous</a></Button>
+                    <Button onClick={() => this.handleChangeSkinGroup('+')} outline color="primary" className="pagination-buttons"><a href="#skins" className="pagination-buttons--link">Next</a></Button>     
+                </div> 
 
             </div>
         </section>

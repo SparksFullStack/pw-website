@@ -25,6 +25,9 @@
 // * Cross Browser Compatibility
 // Trigger shrinking on Safari and Mobile
 
+// * Optional
+// Image scaling up for showcase
+
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
