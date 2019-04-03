@@ -13,6 +13,7 @@ class Products extends Component {
         skinGroups: {},
         currentSkinGroup: 1,
         skinsLoaded: false,
+        currentDate: new Date(),
     }
 
     componentDidMount() {
@@ -26,10 +27,13 @@ class Products extends Component {
 
     handleSortSkins = () => {
         let currentSkinGroup = 1;
+        let totalSkins = 0;
         let largestGroup = 1;
         let iterator = 1;
         const skinGroups = {};
         this.props.skins.forEach(skin => {
+            totalSkins++;
+
             if (skinGroups[currentSkinGroup]) {
                 skinGroups[currentSkinGroup].push(skin);
             } else {
@@ -43,7 +47,7 @@ class Products extends Component {
             } else iterator++;
         });
 
-        this.setState({ skinGroups, largestGroup }, () => console.log(this.state));
+        this.setState({ skinGroups, largestGroup, totalSkins }, () => console.log(this.state));
     }
 
     handleRenderSkins = () => {
@@ -68,6 +72,13 @@ class Products extends Component {
     }
 
 
+    calculateSkinsFound = () => {
+        let totalSkins = 0;
+        if (this.state.skinsLoaded) {
+            totalSkins = (this.state.largestGroup * 6);
+            return 
+        } else return <h2 className="text-primary pb-3 h1">Skins</h2>
+    }
 
   render() {
     return (
@@ -76,10 +87,8 @@ class Products extends Component {
                 <div className="row">
                     <div className="col">
                     <div className="products--header mb-5">
-                        <h2 className="text-primary pb-3 h1">
-                            Premium Skins
-                        </h2>
-                        <p className="lead pb-3">The best skins on the market</p>
+                    <h2 className="text-primary pb-3 h1">{this.state.totalSkins} Skins Found</h2>
+                        <p className="lead pb-3">As of {Date()}</p>
                         </div>
                     </div>
                 </div>
