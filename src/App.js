@@ -48,8 +48,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://proskins-back.herokuapp.com/skins')
-      .then(res => this.setState({ skins: res.data.skins }))
+    axios.get('http://localhost:3001/skins')
+      .then(res => {
+        console.log(res.data);
+        this.setState({ skins: res.data });
+      })
       .catch(err => console.log(err));
   }
 
