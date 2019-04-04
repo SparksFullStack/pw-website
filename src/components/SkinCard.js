@@ -69,7 +69,7 @@ class SkinCard extends Component {
                     <CardTitle className="products--card-title">{this.props.skinState['skin_name']}</CardTitle>
                 </CardHeader>
                 <div className="products--card-image-holder">
-                    <CardImg onClick={() => this.props.toggleModal('skin')} className="products--card-image" top width="100%" src={this.props.skinState['skin_image']} alt="Card image cap" />
+                    <CardImg onClick={() => this.props.toggleModal('skin', this.props.skinState)} className="products--card-image" top width="100%" src={this.props.skinState['skin_image']} alt="Card image cap" />
                 </div>
 
                 <CardBody className="products--card-body">
@@ -84,7 +84,7 @@ class SkinCard extends Component {
                 <CardFooter className="products--card-footer">
                     
                     
-                    <Button  onClick={() => this.props.toggleModal('skin', this.props.skinState)} className="products--buttons" outline>Info</Button>
+                    <Button onClick={() => this.props.toggleModal('skin', this.props.skinState)} className="products--buttons" outline>Info</Button>
                     <Button className="products--buttons" color="success">Buy now</Button>
                 </CardFooter>
             </Card>
