@@ -56,7 +56,7 @@ class SkinCard extends Component {
                     <CardTitle className="products--card-title">{this.props.skinState['skin_name']}</CardTitle>
                 </CardHeader>
                 <div className="products--card-image-holder">
-                    <img onError={this.handleImageError} onClick={() => this.props.toggleModal('skin')} className="products--card-image" top width="100%" src={skinImage} alt="Card caption" />
+                    <img onError={this.handleImageError} onClick={() => this.props.toggleModal('skin')} className="products--card-image" top width="100%" src={skinImage ? `${skinImage}` : ""} alt="Card cap" />
                 </div>
 
                 <CardBody className="products--card-body">

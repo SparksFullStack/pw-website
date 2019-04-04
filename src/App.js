@@ -15,6 +15,7 @@
 // X Shrink Nav on Scroll
 // Add delete skins route
 // X add standardized height for all images
+// Pass modal state when clicking on a skin
 
 
 // * Future Improvements
