@@ -21,6 +21,7 @@ import {
 class SkinCard extends Component {
     state = {
         dropdownOpen: false,
+        ownerListLength: 0,
     }
 
     toggle = () => {
@@ -36,11 +37,25 @@ class SkinCard extends Component {
                     return <ListGroupItem key={owner}>{owner}</ListGroupItem>
                 }
             })
-        } else {
-            return ownerList.map(owner => {
-                return <DropdownItem key={owner}>{owner}</DropdownItem>
-            })
+        } else if (listLength > 4) {
+            return (
+                <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                    <DropdownToggle caret>
+                        All Previous Owners
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        {this.handleRenderDropDown(ownerList)}
+                    </DropdownMenu>
+                </ButtonDropdown>
+            )
+            
         }
+    }
+
+    handleRenderDropDown = (ownerList) => {
+        return ownerList.map(owner => {
+            return <DropdownItem key={owner}>{owner}</DropdownItem>
+        })
     }
 
     handleImageError = () => {
@@ -66,14 +81,7 @@ class SkinCard extends Component {
                         {this.props.skinState ? this.handleRenderOwners('main') : ""}
                     </ListGroup>
 
-                    <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                        <DropdownToggle caret>
-                            All Previous Owners
-                        </DropdownToggle>
-                        <DropdownMenu>
-                            {this.props.skinState ? this.handleRenderOwners() : ""}
-                        </DropdownMenu>
-                    </ButtonDropdown>
+                    {this.props.skinState ? this.handleRenderOwners() : ""}
                 </CardBody>
                 <CardFooter className="products--card-footer">
                     
