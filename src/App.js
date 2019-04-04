@@ -1,7 +1,7 @@
 // * TODO
-// Pass modal state when clicking on a skin
+// X Pass modal state when clicking on a skin
 // Handle differing image sizes
-// Get most recent update from the database
+// X Get most recent update from the database
 
 
 // * Future Improvements
@@ -42,7 +42,7 @@ class App extends Component {
   };
 
   getSkins = () => {
-    axios.get('http://localhost:3001/skins')
+    axios.get('https://proskins-back.herokuapp.com/skins')
       .then(res => {
         this.setState({ skins: res.data });
       })
@@ -50,7 +50,7 @@ class App extends Component {
   }
 
   getTime = () => {
-    axios.get('http://localhost:3001/last_updated')
+    axios.get('https://proskins-back.herokuapp.com/last_updated')
       .then(res => {
         if (!res.data[0].Update_time) {
           this.setState({ time: res.data[0].Create_time });
