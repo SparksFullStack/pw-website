@@ -8,7 +8,6 @@ import { Card, CardTitle, CardBody, CardHeader, CardFooter, CardText, Button,
 } from 'reactstrap';
 
 class Products extends Component {
-
     state = {
         skinGroups: {},
         currentSkinGroup: 1,
@@ -20,9 +19,7 @@ class Products extends Component {
         if (this.props.skins) {
             this.handleSortSkins();
             this.setState({ skinsLoaded: true });
-        } else {
-            console.log('skins loading');
-        }
+        } 
     }
 
     handleSortSkins = () => {
@@ -47,7 +44,7 @@ class Products extends Component {
             } else iterator++;
         });
 
-        this.setState({ skinGroups, largestGroup, totalSkins }, () => console.log(this.state));
+        this.setState({ skinGroups, largestGroup, totalSkins });
     }
 
     handleRenderSkins = () => {
@@ -80,6 +77,33 @@ class Products extends Component {
         } else return <h2 className="text-primary pb-3 h1">Skins</h2>
     }
 
+    handleFormatTime = () => {
+        // if (this.props.time) {
+        //     let date = new Date(this.props.time);
+        //     let day = date.getDay();
+        //     let splitDay = day.toString().split("");
+        //     if (splitDay.length === 1) {
+        //         splitDay.unshift('0');
+        //         splitDay = splitDay.map(num => num);
+        //     }
+        //     let finalDay = parseInt(splitDay.join(''));
+        //     let month = date.getMonth();
+        //     let year = date.getFullYear();
+        //     console.log(`${month} ${finalDay} ${year}`);
+        // }
+
+        if (this.props.time) {
+
+            let shortenedDate = this.props.time.split('T');
+            let splitDate = shortenedDate[0].split("-");
+            let month = splitDate.splice(1, 2);
+            let finalDate = month.concat(splitDate);
+            return finalDate.join('-');
+        }
+
+        
+    }
+
   render() {
     return (
         <section id="skins" className="py-5 text-center bg-light">
@@ -88,7 +112,7 @@ class Products extends Component {
                     <div className="col">
                     <div className="products--header mb-5">
                     <h2 className="text-primary pb-3 h1">{this.state.totalSkins} Skins Found</h2>
-                        <p className="lead pb-3">As of {Date()}</p>
+                        <p className="lead pb-3">As of {this.handleFormatTime()}</p>
                         </div>
                     </div>
                 </div>

@@ -1,21 +1,7 @@
 // * TODO
-// X Add link to card image
-// X Display a set amount of previous users then have the dropdown
-// X Add admin login page
-// X Add skin adding page
-// X Add login functionality
-// X Add create skin functionality
-// X Add issue JWT functionality
-// X Add JWT checking for login status
-// X Add real data instead of dummy data
-// X Add pagination
-// X Add background image for skin
-// Add searching/sorting
-// Add thumbnails for previous users
-// X Shrink Nav on Scroll
-// Add delete skins route
-// X add standardized height for all images
 // Pass modal state when clicking on a skin
+// Handle differing image sizes
+// Get most recent update from the database
 
 
 // * Future Improvements
@@ -28,6 +14,7 @@
 
 // * Optional
 // Image scaling up for showcase
+// Add thumbnails for previous users
 
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
@@ -49,10 +36,26 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.getSkins();
+    this.getTime();
+  };
+
+  getSkins = () => {
     axios.get('http://localhost:3001/skins')
       .then(res => {
-        console.log(res.data);
         this.setState({ skins: res.data });
+      })
+      .catch(err => console.log(err));
+  }
+
+  getTime = () => {
+    axios.get('http://localhost:3001/last_updated')
+      .then(res => {
+        if (!res.data[0].Update_time) {
+          this.setState({ time: res.data[0].Create_time });
+        } else {
+          this.setState({ time: res.data[0].Update_time });
+        }
       })
       .catch(err => console.log(err));
   }
@@ -69,7 +72,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route path='/' exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState} skins={this.state.skins}/>} />
+        <Route path='/' exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState} skins={this.state.skins} time={this.state.time}/>} />
         <Route path='/login' exact component={AdminLogin} />
         <Route path='/admin' exact component={AddSkins} />
       </div>
