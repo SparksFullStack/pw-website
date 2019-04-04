@@ -3,6 +3,7 @@ import "./PopupModal.css";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class PopupModal extends Component {
+    
     handleRenderModalType = () => {
         if (this.props.modalType === 'about') {
             return (
@@ -17,22 +18,27 @@ class PopupModal extends Component {
                     </ModalFooter>
                 </Modal>
             )
-        } else return (
-            <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="popupModal">
-                <ModalHeader toggle={this.props.toggle}>About Item</ModalHeader>
-                <ModalBody className="text-center">
-                    <img src="http://cdn.steamcommunity.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20hPbkI7PYhG5u5cRjiOXE_JbwjGu4ohQ0J3egI4ORcQNqYw3W8la5w-frgJK77ZXKwCQysyVwtnbayxKzhxlIarRum7XAHvqFh2jA=/200fx200f" alt="Item photo" />
-                    <p>Item info goes here</p>
-                </ModalBody>
-                <ModalFooter>
-                    <Button className="modal-footer--buttons" color="success" onClick={this.props.toggle}>Buy Now</Button>{' '}
-                    <Button className="modal-footer--buttons" color="secondary" onClick={this.props.toggle}>Close Modal</Button>
-                </ModalFooter>
-            </Modal>
-        )
+        } else if (this.props.modalType === 'skin'){
+            return  (
+                <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="popupModal">
+                    <ModalHeader toggle={this.props.toggle}>{this.props.modalState.skin_name}</ModalHeader>
+                    <ModalBody className="text-center">
+                        <div className="products--card-image-holder">
+                            <img className="products--card-image card-img-top" src={this.props.modalState.skin_image} />
+                        </div>
+                        <p style={{ marginTop: '15px', marginBottom: 0 }}><strong>Price:</strong> {this.props.modalState.price}</p>
+                    </ModalBody>
+                    <ModalFooter>
+                        <a className="modal-footer--buttons btn btn-primary" href={this.props.modalState.buy_link} onClick={this.props.toggle}>Buy Now</a>
+                        <Button className="modal-footer--buttons" color="secondary" onClick={this.props.toggle}>Close Modal</Button>
+                    </ModalFooter>
+                </Modal>
+            )
+        }
     }
 
     render() {
+        console.log(this.props.modalState)
         return (
             <div className="container">
                 {this.handleRenderModalType()}

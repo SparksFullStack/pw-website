@@ -16,7 +16,7 @@ class Home extends Component {
                 <Ads />
                 <Products skins={this.props.skins} time={this.props.time} toggleModal={this.props.toggleModal} />
                 <Footer />
-                <PopupModal toggle={this.props.toggleModal} isOpen={this.props.modalState.isOpen} modalType={this.props.modalState.modalType} />
+                <PopupModal toggle={this.props.toggleModal} isOpen={this.props.modalState.isOpen} modalType={this.props.modalState.modalType} modalState={this.props.modalState.data}/>
             </div>
         )
     }

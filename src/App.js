@@ -31,7 +31,8 @@ class App extends Component {
   state = {
     modalState: {
       isOpen: false,
-      modalType: ""
+      modalType: "",
+      data: undefined,
     },
   }
 
@@ -60,10 +61,9 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  toggleModal = (modalType) => {
-      console.log(modalType);
+  toggleModal = (modalType, skinState) => {
       if (modalType) {
-          this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType }});
+          this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType, data: skinState }});
       } else {
           this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType: "" }});
       }
