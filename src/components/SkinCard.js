@@ -33,11 +33,11 @@ class SkinCard extends Component {
         const listLength = ownerList.length
         if (type === 'main'){
             return ownerList.map((owner, index) => {
-                if (index < listLength && index <= 4){
+                if (index < listLength && index < 5){
                     return <ListGroupItem key={owner}>{owner}</ListGroupItem>
                 }
             })
-        } else if (listLength > 4) {
+        } else if (listLength > 5) {
             return (
                 <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                     <DropdownToggle caret>
