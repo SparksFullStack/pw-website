@@ -33,7 +33,7 @@ class SkinCard extends Component {
         const listLength = ownerList.length
         if (type === 'main'){
             return ownerList.map((owner, index) => {
-                if (index < listLength && index < 5){
+                if (index < listLength && index < 5 && owner !== ""){
                     return <ListGroupItem key={owner}>{owner}</ListGroupItem>
                 }
             })
