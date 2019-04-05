@@ -8,7 +8,7 @@ class Footer extends Component {
                     <div className="row text-center">
                     <div className="col-md-6 ml-auto">
                         <p style={{marginTop: '10px'}}>
-                            Copyright &copy; <span style={{fontSize: '1.2em'}}>Permwaze</span> 2019
+                            Copyright &copy; <span style={{fontSize: '1.2em'}}>Proskins.net</span> 2019
                         </p>
                     </div>
                     <div className="col-md-6 ml-auto">
