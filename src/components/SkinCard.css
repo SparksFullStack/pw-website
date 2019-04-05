@@ -19,7 +19,7 @@
 }
 
 .products--card-image-holder {
-    background: url(../resources/skin-background.webp);
+    background-image: url("../resources/skin-background.jpg");
     overflow: hidden;
 }
 

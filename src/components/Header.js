@@ -52,9 +52,9 @@ class Header extends Component {
                     <NavItem>
                         <NavLink className="navlink--about" onClick={() => this.props.toggle('about')}>About</NavLink>
                     </NavItem>
-                    <NavItem>
+                    {/* <NavItem>
                         <NavLink href="/login" className="navlink--about">Admin</NavLink>
-                    </NavItem>
+                    </NavItem> */}
                 </Nav>
             )
         } else if (this.props.page === 'admin') {
