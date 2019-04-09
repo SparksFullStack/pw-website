@@ -44,6 +44,7 @@ class App extends Component {
   getSkins = () => {
     axios.get('https://proskins-back.herokuapp.com/skins')
       .then(res => {
+        // console.log(res.data);
         this.setState({ skins: res.data });
       })
       .catch(err => console.log(err));

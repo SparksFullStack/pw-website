@@ -18,7 +18,6 @@ class Products extends Component {
     componentDidMount() {
         if (this.props.skins) {
             this.handleSortSkins();
-            this.setState({ skinsLoaded: true });
         } 
     }
 
@@ -44,14 +43,16 @@ class Products extends Component {
             } else iterator++;
         });
 
-        this.setState({ skinGroups, largestGroup, totalSkins });
+        this.setState({ skinGroups, largestGroup, totalSkins, skinsLoaded: true });
     }
 
     handleRenderSkins = () => {
         const { skinGroups, currentSkinGroup } = this.state;
-        return skinGroups[currentSkinGroup].map(skin => {
-            return <SkinCard key={skin['owners']} toggleModal={this.props.toggleModal} skinState={skin} />
-        })
+        skinGroups[currentSkinGroup].forEach(skin => console.log('skin'));
+        // const { skinGroups, currentSkinGroup } = this.state;
+        // return skinGroups[currentSkinGroup].map(skin => {
+        //     return <SkinCard key={skin['owners']} toggleModal={this.props.toggleModal} skinState={skin} />
+        // })
     };
 
     handleChangeSkinGroup = (increment) => {
@@ -65,7 +66,7 @@ class Products extends Component {
             groupSet = true;
         }
 
-        if (groupSet) this.setState({ currentSkinGroup: newSkinGroup });
+        if (groupSet) this.setState({ currentSkinGroup: newSkinGroup }, () => this.testHandler());
     }
 
 
@@ -73,35 +74,24 @@ class Products extends Component {
         let totalSkins = 0;
         if (this.state.skinsLoaded) {
             totalSkins = (this.state.largestGroup * 6);
-            return 
+            return <h2 className="text-primary pb-3 h1">{totalSkins} Skins Found</h2>
         } else return <h2 className="text-primary pb-3 h1">Skins</h2>
     }
 
     handleFormatTime = () => {
-        // if (this.props.time) {
-        //     let date = new Date(this.props.time);
-        //     let day = date.getDay();
-        //     let splitDay = day.toString().split("");
-        //     if (splitDay.length === 1) {
-        //         splitDay.unshift('0');
-        //         splitDay = splitDay.map(num => num);
-        //     }
-        //     let finalDay = parseInt(splitDay.join(''));
-        //     let month = date.getMonth();
-        //     let year = date.getFullYear();
-        //     console.log(`${month} ${finalDay} ${year}`);
-        // }
-
         if (this.props.time) {
-
             let shortenedDate = this.props.time.split('T');
             let splitDate = shortenedDate[0].split("-");
             let month = splitDate.splice(1, 2);
             let finalDate = month.concat(splitDate);
             return finalDate.join('-');
         }
+    }
 
-        
+    testHandler = () => {
+        if (this.state.skinsLoaded) {
+            this.handleRenderSkins();
+        }
     }
 
   render() {
@@ -111,14 +101,14 @@ class Products extends Component {
                 <div className="row">
                     <div className="col">
                     <div className="products--header mb-5">
-                    <h2 className="text-primary pb-3 h1">{this.state.totalSkins} Skins Found</h2>
+                        {this.calculateSkinsFound()}
                         <p className="lead pb-3">As of {this.handleFormatTime()}</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="products--cards row">
-                    {this.state.skinsLoaded ? this.handleRenderSkins() : <p>Loading skins...</p>}
+                    
                 </div>  
 
                 <div className="pagination-buttons--container">
