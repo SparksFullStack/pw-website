@@ -66,7 +66,7 @@ class SkinCard extends Component {
         if (this.props.skinState["stat_trak"]) {
             return (
                 <div className="stat-track--container">
-                    <span>{this.props.skinState["price"]}</span>
+                    <span style={{fontWeight: "bold"}} className="text-white h6">{this.props.skinState["price"]}</span>
                 </div>
             )
         } else return "";
