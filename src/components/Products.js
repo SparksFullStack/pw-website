@@ -48,11 +48,11 @@ class Products extends Component {
 
     handleRenderSkins = () => {
         const { skinGroups, currentSkinGroup } = this.state;
-        skinGroups[currentSkinGroup].forEach(skin => console.log('skin'));
-        // const { skinGroups, currentSkinGroup } = this.state;
-        // return skinGroups[currentSkinGroup].map(skin => {
-        //     return <SkinCard key={skin['owners']} toggleModal={this.props.toggleModal} skinState={skin} />
-        // })
+        let iterator = 0;
+        return skinGroups[currentSkinGroup].map(skin => {
+            iterator++;
+            return <SkinCard key={skin['owners'] + iterator} toggleModal={this.props.toggleModal} skinState={skin} />
+        })
     };
 
     handleChangeSkinGroup = (increment) => {
@@ -66,15 +66,13 @@ class Products extends Component {
             groupSet = true;
         }
 
-        if (groupSet) this.setState({ currentSkinGroup: newSkinGroup }, () => this.testHandler());
+        if (groupSet) this.setState({ currentSkinGroup: newSkinGroup });
     }
 
 
     calculateSkinsFound = () => {
-        let totalSkins = 0;
         if (this.state.skinsLoaded) {
-            totalSkins = (this.state.largestGroup * 6);
-            return <h2 className="text-primary pb-3 h1">{totalSkins} Skins Found</h2>
+            return <h2 className="text-primary pb-3 h1">{this.props.skins.leng} Skins Found</h2>
         } else return <h2 className="text-primary pb-3 h1">Skins</h2>
     }
 
@@ -85,12 +83,6 @@ class Products extends Component {
             let month = splitDate.splice(1, 2);
             let finalDate = month.concat(splitDate);
             return finalDate.join('-');
-        }
-    }
-
-    testHandler = () => {
-        if (this.state.skinsLoaded) {
-            this.handleRenderSkins();
         }
     }
 
@@ -108,7 +100,7 @@ class Products extends Component {
                 </div>
 
                 <div className="products--cards row">
-                    
+                    {this.state.skinsLoaded ? this.handleRenderSkins() : <p>Loading skins...</p>}
                 </div>  
 
                 <div className="pagination-buttons--container">
