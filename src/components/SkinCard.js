@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import "./SkinCard.css";
 import { 
     Card, 
@@ -65,11 +65,11 @@ class SkinCard extends Component {
     handleRenderStatTrak = () => {
         if (this.props.skinState["stat_trak"]) {
             return (
-                <div className="stat-track--container">
-                    <span style={{fontWeight: "bold"}} className="text-white h6">{this.props.skinState["price"]}</span>
+                <div className="stat-trak--container">
+                    <img className="stat-trak--img" src={require('../resources/stat-trak-icon.png')} alt="This skin comes with Stat-Trak!" />
                 </div>
             )
-        } else return "";
+        } else return <Fragment></Fragment>;
     }
 
     render() {
@@ -80,7 +80,11 @@ class SkinCard extends Component {
                     <CardTitle className="products--card-title">{this.props.skinState['skin_name']}</CardTitle>
                 </CardHeader>
                 <div className="products--card-image-holder">
+                    <div className="price--container">
+                        <span style={{fontWeight: "bold"}} className="text-white h6">{this.props.skinState["price"]}</span>
+                    </div>
                     {this.handleRenderStatTrak()}
+                    
                     <CardImg onClick={() => this.props.toggleModal('skin', this.props.skinState)} className="products--card-image" top width="100%" src={this.props.skinState['skin_image']} alt="Card image cap" />
                 </div>
 
