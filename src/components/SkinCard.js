@@ -88,6 +88,9 @@ class SkinCard extends Component {
                 </div>
 
                 <CardBody className="products--card-body">
+                    <div className="wear-container">
+                        <span>Wear: {this.props.skinState["wear"]}</span>
+                    </div>
                     <h6 className="products--card-body--header text-secondary">Previous Owners</h6>
                     
                     <ListGroup className="products--card-list">
