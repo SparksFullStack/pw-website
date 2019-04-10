@@ -73,7 +73,6 @@ class SkinCard extends Component {
     }
 
     render() {
-        console.log(typeof this.props.skinState["stat_trak"]);
         return (
             <Card className="products--card col-lg-3 col-md-5 col-sm-8 col-xs-8 ">
                 <CardHeader>
