@@ -72,7 +72,7 @@ class Products extends Component {
 
     calculateSkinsFound = () => {
         if (this.state.skinsLoaded) {
-            return <h2 className="text-primary pb-3 h1">{this.props.skins.leng} Skins Found</h2>
+            return <h2 className="text-primary pb-3 h1">{this.props.skins.length} Skins Found</h2>
         } else return <h2 className="text-primary pb-3 h1">Skins</h2>
     }
 
