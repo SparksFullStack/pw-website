@@ -63,7 +63,7 @@ class SkinCard extends Component {
     }
 
     handleRenderStatTrak = () => {
-        if (this.props.skinState["stat_trak"]) {
+        if (this.props.skinState["stat_trak"] === "True") {
             return (
                 <div className="stat-trak--container">
                     <img className="stat-trak--img" src={require('../resources/stat-trak-icon.png')} alt="This skin comes with Stat-Trak!" />
@@ -73,6 +73,7 @@ class SkinCard extends Component {
     }
 
     render() {
+        console.log(typeof this.props.skinState["stat_trak"]);
         return (
             <Card className="products--card col-lg-3 col-md-5 col-sm-8 col-xs-8 ">
                 <CardHeader>
