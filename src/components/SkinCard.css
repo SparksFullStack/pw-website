@@ -24,7 +24,7 @@
     color: #fff;
     top: 10px;
     right: 10px;
-    background-image: linear-gradient(120deg, darkred, lightgreen);
+    background-image: linear-gradient(-90deg, darkred, lightgreen);
     margin: 0 auto;
     margin-bottom: 5px;
 }

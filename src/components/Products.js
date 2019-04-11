@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
 import "./Products.css";
 import SkinCard from './SkinCard';
-import { Card, CardTitle, CardBody, CardHeader, CardFooter, CardText, Button,
+import { 
+    Card, 
+    CardTitle, 
+    CardBody, 
+    CardHeader, 
+    CardFooter, 
+    CardText, 
+    Button,
+    Spinner,
     Pagination,
     PaginationItem,
     PaginationLink
@@ -86,6 +94,13 @@ class Products extends Component {
         }
     }
 
+    renderLoadingScreen = () => (
+        <div className="loading">
+            <Spinner type="grow" color="primary" />
+            <p class="h3">Loading skins...</p>
+        </div>
+    )
+
   render() {
     return (
         <section id="skins" className="py-5 text-center bg-light">
@@ -100,7 +115,7 @@ class Products extends Component {
                 </div>
 
                 <div className="products--cards row">
-                    {this.state.skinsLoaded ? this.handleRenderSkins() : <p>Loading skins...</p>}
+                    {this.state.skinsLoaded ? this.handleRenderSkins() : this.renderLoadingScreen()}
                 </div>  
 
                 <div className="pagination-buttons--container">
