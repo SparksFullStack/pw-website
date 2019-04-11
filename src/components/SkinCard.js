@@ -3,10 +3,9 @@ import "./SkinCard.css";
 import { 
     Card, 
     CardImg, 
-    CardText, 
+    Progress, 
     CardBody,
     CardTitle, 
-    CardSubtitle, 
     Button,
     CardHeader,
     CardFooter,
@@ -88,9 +87,25 @@ class SkinCard extends Component {
                 </div>
 
                 <CardBody className="products--card-body">
-                    <div className="wear-container">
+                    {/* <div className="wear-container">
                         <span>Wear: {this.props.skinState["wear"]}</span>
+                    </div> */}
+
+                    <div className="progressbar">
+                        <i className="fas fa-arrow-down progressbar--marker"></i>
+                        
+                        <div className="progressbar--container">
+                            <Progress multi>
+                                <Progress bar color="success" value="15" />
+                                <Progress bar value="15" />
+                                <Progress bar color="info" value="23" />
+                                <Progress bar color="warning" value="7" />
+                                <Progress bar color="danger" value="55" />
+                                {/* <span className="progressbar--marker">|</span> */}
+                            </Progress>
+                        </div>
                     </div>
+
                     <h6 className="products--card-body--header text-secondary">Previous Owners</h6>
                     
                     <ListGroup className="products--card-list">

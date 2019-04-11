@@ -24,7 +24,8 @@
     color: #fff;
     top: 10px;
     right: 10px;
-    background-image: linear-gradient(-90deg, darkred, lightgreen);
+    /* background-image: linear-gradient(-90deg, darkred, lightgreen); */
+    background-color: #6c757d;
     margin: 0 auto;
     margin-bottom: 5px;
 }
@@ -36,6 +37,10 @@
 .products--card-body {
     flex-direction: column;
     justify-content: flex-start; 
+}
+
+.products--card-body--header {
+    margin-top: 10px;
 }
 
 .products--card-image {
@@ -72,3 +77,15 @@
     align-items: center;
 }
 
+.progressbar {
+    position: relative;
+    height: 30px;
+}
+
+.progressbar--marker {
+    position: absolute;
+}
+
+.progressbar--container {
+    margin-top: 18px;
+}
