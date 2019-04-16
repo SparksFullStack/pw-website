@@ -87,11 +87,11 @@ class SkinCard extends Component {
                 </div>
 
                 <CardBody className="products--card-body">
-                    {/* <div className="wear-container">
+                    <div className="wear-container">
                         <span>Wear: {this.props.skinState["wear"]}</span>
-                    </div> */}
+                    </div>
 
-                    <div className="progressbar">
+                    <div className="progressbar clearfix">
                         <i className="fas fa-arrow-down progressbar--marker"></i>
                         
                         <div className="progressbar--container">
@@ -102,7 +102,19 @@ class SkinCard extends Component {
                                 <Progress bar color="warning" value="7" />
                                 <Progress bar color="danger" value="55" />
                                 {/* <span className="progressbar--marker">|</span> */}
+
                             </Progress>
+                            <div className="progressbar--lines">
+                                <span className="progressbar-line">|</span>
+                                <span className="progressbar-line">|</span>
+                                <span className="progressbar-line">|</span>
+                            </div>
+
+                            <div className="progressbar--numbers">
+                                <span className="progressbar-number">1</span>
+                                <span className="progressbar-number">.5</span>
+                                <span className="progressbar-number">0</span>
+                            </div>
                         </div>
                     </div>
 
