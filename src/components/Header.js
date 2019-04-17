@@ -9,6 +9,7 @@ import {
     NavItem,
     NavLink,
 } from 'reactstrap';
+import logo from '../resources/logo.png';
 
 class Header extends Component {
     state = {
@@ -72,7 +73,9 @@ class Header extends Component {
         return (
             <header>
                 <Navbar id="navbar-main" className={this.state.scrolling ? "fixed-top navbar-main__scrolling header--navbar" : "fixed-top py-4 header--navbar"} color="light" light expand="md">
-                    <NavbarBrand href="./">Proskins</NavbarBrand>
+                    <NavbarBrand className="navbar--logo" href="./">
+                        <img  src={logo} alt='Proskins Logo' />
+                    </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         {this.handleRenderNavItems()}
