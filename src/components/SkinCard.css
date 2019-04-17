@@ -84,6 +84,7 @@
 
 .progressbar--marker {
     position: absolute;
+    transform: scale(1.25);
 }
 
 .progressbar--container {

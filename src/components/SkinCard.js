@@ -92,7 +92,7 @@ class SkinCard extends Component {
                     </div>
 
                     <div className="progressbar clearfix">
-                        <i className="fas fa-arrow-down progressbar--marker"></i>
+                        <i className="fas fa-caret-down progressbar--marker"></i>
                         
                         <div className="progressbar--container">
                             <Progress multi>
