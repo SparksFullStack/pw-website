@@ -90,6 +90,7 @@
 .progressbar--marker {
     position: absolute;
     transform: scale(1.25);
+    padding-left: 40px;
 }
 
 .progressbar--container {
