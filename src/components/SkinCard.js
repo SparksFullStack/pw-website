@@ -76,7 +76,7 @@ class SkinCard extends Component {
         console.log(wear);
         let temp;
         if (wear[0] === 1) {
-            temp = 0;
+            temp = `97.25`;
         } else {
             
             if (wear[2] === "0" && wear[3] !== "0" && parseInt(wear[3]) > 5) {
@@ -88,15 +88,6 @@ class SkinCard extends Component {
             } else if (wear[2] !== "0") {
                 temp = `${wear[2]}${wear[3]}`;
             }
-            // if (wear[2] === 0 && wear[3] !== 0 && wear[3] >= 5) {
-            //     console.log(`greater than 5 ${wear[3]}`);
-            //     temp = `0${wear[3]}`;
-            // } else if (wear[2] !== 0) {
-            //     temp = `${wear[2]}${wear[3]}`;
-            // } else if (wear[3] === 0 || wear[3] <= 5) {
-            //     temp = `05`;
-            // }
-
             return 100 - parseInt(temp);
         }
     }
