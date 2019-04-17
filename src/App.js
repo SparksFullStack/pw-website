@@ -8,9 +8,10 @@
 // Make success message time out when new skin is added
 // Add a loading message when first starting the page up
 // Add a message when you reach the end of the pagination
+// Change calculation for the stat-trak to implement rounding up or down
 
 // * Cross Browser Compatibility
-// Trigger shrinking on Safari and Mobile
+// Trigger nav shrinking on Safari and Mobile
 
 // * Optional
 // Image scaling up for showcase

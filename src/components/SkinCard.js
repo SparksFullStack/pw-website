@@ -113,8 +113,8 @@ class SkinCard extends Component {
                         
                         <div className="progressbar--container">
                             <Progress multi>
-                                <Progress bar color="success" value="15" />
-                                <Progress bar value="15" />
+                                <Progress bar color="success" value="7" />
+                                <Progress bar value="8" />
                                 <Progress bar color="info" value="23" />
                                 <Progress bar color="warning" value="7" />
                                 <Progress bar color="danger" value="55" />
