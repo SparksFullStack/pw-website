@@ -76,18 +76,27 @@ class SkinCard extends Component {
         console.log(wear);
         let temp;
         if (wear[0] === 1) {
-            return 0;
+            temp = 0;
         } else {
-            if (wear[2] === 0) {
-                temp = `0${wear[3]}`;
-            } else if (wear[2] !== 0) {
+            
+            if (wear[2] === "0" && wear[3] !== "0" && parseInt(wear[3]) > 5) {
+                temp = `0${wear[3]}`
+            } else if (wear[2] === "0"){
+                if (wear[3] === "0" || parseInt(wear[3]) < 5){
+                    temp = `05`;
+                } else temp = `0${wear[3]}`
+            } else if (wear[2] !== "0") {
                 temp = `${wear[2]}${wear[3]}`;
-            } else if (wear[3] === 0 || wear[3] < 5) {
-                temp = `05`;
             }
-            // } else if (wear[3] === 0 || wear[3] < 5) {
+            // if (wear[2] === 0 && wear[3] !== 0 && wear[3] >= 5) {
+            //     console.log(`greater than 5 ${wear[3]}`);
+            //     temp = `0${wear[3]}`;
+            // } else if (wear[2] !== 0) {
+            //     temp = `${wear[2]}${wear[3]}`;
+            // } else if (wear[3] === 0 || wear[3] <= 5) {
             //     temp = `05`;
-            // } else temp = `${wear[2]}${wear[3]}`;
+            // }
+
             return 100 - parseInt(temp);
         }
     }
@@ -95,7 +104,6 @@ class SkinCard extends Component {
     render() {
         return (
             <Card className="products--card col-lg-3 col-md-5 col-sm-8 col-xs-8 ">
-            {console.log(this.calculateProgressMarker())}
                 <CardHeader>
                     <CardTitle className="products--card-title">{this.props.skinState['skin_name']}</CardTitle>
                 </CardHeader>
