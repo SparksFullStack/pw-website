@@ -75,7 +75,7 @@ class SkinCard extends Component {
         let wear = this.props.skinState["wear"].split("");
         let temp;
         if (wear[0] === 1) {
-            return `0`;
+            return 1;
         } else {
             temp = wear.splice(2, 2).join("");
             return 100 - parseInt(temp);
