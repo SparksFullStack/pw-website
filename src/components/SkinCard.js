@@ -71,9 +71,21 @@ class SkinCard extends Component {
         } else return <Fragment></Fragment>;
     }
 
+    calculateProgressMarker = () => {
+        let wear = this.props.skinState["wear"].split("");
+        let temp;
+        if (wear[0] === 1) {
+            return 0;
+        } else {
+            temp = `${wear[2]}${wear[3]}`;
+            return 100 - parseInt(temp);
+        }
+    }
+
     render() {
         return (
             <Card className="products--card col-lg-3 col-md-5 col-sm-8 col-xs-8 ">
+            {console.log(this.calculateProgressMarker())}
                 <CardHeader>
                     <CardTitle className="products--card-title">{this.props.skinState['skin_name']}</CardTitle>
                 </CardHeader>
@@ -92,7 +104,7 @@ class SkinCard extends Component {
                     </div>
 
                     <div className="progressbar clearfix">
-                        <i className="fas fa-caret-down progressbar--marker"></i>
+                        <i style={{ right: `${this.calculateProgressMarker()}%` }} className="fas fa-caret-down progressbar--marker"></i>
                         
                         <div className="progressbar--container">
                             <Progress multi>
@@ -101,8 +113,6 @@ class SkinCard extends Component {
                                 <Progress bar color="info" value="23" />
                                 <Progress bar color="warning" value="7" />
                                 <Progress bar color="danger" value="55" />
-                                {/* <span className="progressbar--marker">|</span> */}
-
                             </Progress>
                             <div className="progressbar--lines">
                                 <span className="progressbar-line">|</span>
@@ -111,9 +121,9 @@ class SkinCard extends Component {
                             </div>
 
                             <div className="progressbar--numbers">
-                                <span className="progressbar-number">1</span>
-                                <span className="progressbar-number">.5</span>
                                 <span className="progressbar-number">0</span>
+                                <span className="progressbar-number">.5</span>
+                                <span className="progressbar-number">1</span>
                             </div>
                         </div>
                     </div>
