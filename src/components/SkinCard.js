@@ -80,9 +80,14 @@ class SkinCard extends Component {
         } else {
             if (wear[2] === 0) {
                 temp = `0${wear[3]}`;
+            } else if (wear[2] !== 0) {
+                temp = `${wear[2]}${wear[3]}`;
             } else if (wear[3] === 0 || wear[3] < 5) {
                 temp = `05`;
-            } else temp = `${wear[2]}${wear[3]}`;
+            }
+            // } else if (wear[3] === 0 || wear[3] < 5) {
+            //     temp = `05`;
+            // } else temp = `${wear[2]}${wear[3]}`;
             return 100 - parseInt(temp);
         }
     }
