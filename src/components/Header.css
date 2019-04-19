@@ -24,12 +24,31 @@
 }
 
 .navbar--logo {
-  transform: scale(.75);
+  margin-left: 15px;
+}
+
+.navbar-collapse {
+  margin-right: 60px;
+}
+
+.navbar-left {
+  margin-left: 60px;
+}
+
+.navbar-left > img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-item {
+  padding-left: 1.6rem !important;
+  padding-right: 0 !important;
 }
 
 @media screen and (max-width: 767px){
   #navbar-main {
-    padding-bottom: 1.5rem !important;
+    /* padding-bottom: 1.5rem !important; */
   }
+
 
 }
