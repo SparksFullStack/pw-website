@@ -84,7 +84,7 @@ class Header extends Component {
                 <Navbar id="navbar-main" className={this.state.scrolling ? "fixed-top navbar-main__scrolling header--navbar" : "fixed-top py-4 header--navbar"} color="light" light expand="md">                    
                     <a href="#" class="navbar-left"><img src={logo} /></a>
                     
-                    <NavbarToggler onClick={this.toggle} />
+                    <NavbarToggler className="ml-auto" onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         {this.handleRenderNavItems()}
                     </Collapse>

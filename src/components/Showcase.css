@@ -17,3 +17,9 @@
 .showcase--main-container {
   transform: translateY(60px);
 }
+
+@media screen and (max-width: 450px) {
+  #showcase {
+    margin-top: 87px;
+  }
+}

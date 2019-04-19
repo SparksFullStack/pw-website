@@ -45,10 +45,21 @@
   padding-right: 0 !important;
 }
 
-@media screen and (max-width: 767px){
-  #navbar-main {
-    /* padding-bottom: 1.5rem !important; */
+@media screen and (max-width: 975px) {
+  .navbar-collapse {
+    margin-right: 0;
+  }
+  
+  .navbar-left {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .navbar-left > img {
+    height: 30px
   }
 
 
 }
+
