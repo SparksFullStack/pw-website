@@ -8,7 +8,7 @@ class PopupModal extends Component {
         if (this.props.modalType === 'about') {
             return (
                 <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="popupModal">
-                    <ModalHeader toggle={this.toggle}>About Permwaze</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>About Proskins</ModalHeader>
                     <ModalBody>
                         <img className="products--card-image card-img-top ml-auto mr-auto" style={{ height: "50px", width: "auto", display: "block" }} src={require('../resources/logo.jpg')} alt="Proskins Logo"/> 
                         <br />
@@ -25,8 +25,7 @@ class PopupModal extends Component {
                         </div>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={this.props.toggle}>Do Something</Button>{' '}
-                        <Button color="secondary" onClick={this.props.toggle}>Close Modal</Button>
+                        <Button color="secondary" onClick={this.props.toggle}>Close</Button>
                     </ModalFooter>
                 </Modal>
             )
