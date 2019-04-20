@@ -11,15 +11,6 @@ import {
 } from 'reactstrap';
 import logo from '../resources/logo.jpg';
 
-const styles = {
-    scrollingTogglerStyles: {
-        marginTop: '15px'
-    },
-    togglerStyles: {
-        marginTop: 0
-    }
-}
-
 class Header extends Component {
     state = {
         isOpen: false,
@@ -82,7 +73,7 @@ class Header extends Component {
         return (
             <header>
                 <Navbar id="navbar-main" className={this.state.scrolling ? "fixed-top navbar-main__scrolling header--navbar" : "fixed-top py-4 header--navbar"} color="light" light expand="md">                    
-                    <a href="#" class="navbar-left"><img src={require('../resources/logo.jpg')} alt="Proskins" /></a>
+                    <a href="/" class="navbar-left"><img src={require('../resources/logo.jpg')} alt="Proskins" /></a>
                     
                     <NavbarToggler className="ml-auto" onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>

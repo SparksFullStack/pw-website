@@ -10,7 +10,19 @@ class PopupModal extends Component {
                 <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} className="popupModal">
                     <ModalHeader toggle={this.toggle}>About Permwaze</ModalHeader>
                     <ModalBody>
-                        Photo, description, and other info go here
+                        <img className="products--card-image card-img-top ml-auto mr-auto" style={{ height: "50px", width: "auto", display: "block" }} src={require('../resources/logo.jpg')} alt="Proskins Logo"/> 
+                        <br />
+                        <span style={{ width: "90%"}}  className="about--body--text">Proskins.net is a website designated to help you locate skins that are currently up for sale on Bitskins.com and CS.Money that were previously owned/used by your favorite pro or streamer.</span>
+                        <br />
+                        <br />
+                        <div style={{ width: "90%"}} className="about--body--disclaimer ml-auto mr-auto">
+                            <span className="text-danger">Disclaimer:</span>
+                            <ul style={{ }}>
+                                <li>Skins are chosen from a limited pool based on available data</li>
+                                <li>All results are updated once daily due to processing time.</li>
+                                <li>Proskins is not affiliated with Valve, Bitskins, or CS.Money, and receives no money from any skins that are purchased.</li>
+                            </ul>
+                        </div>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={this.props.toggle}>Do Something</Button>{' '}
@@ -24,7 +36,7 @@ class PopupModal extends Component {
                     <ModalHeader toggle={this.props.toggle}>{this.props.modalState.skin_name}</ModalHeader>
                     <ModalBody className="text-center">
                         <div className="products--card-image-holder">
-                            <img className="products--card-image card-img-top" src={this.props.modalState.skin_image} />
+                            <img className="products--card-image card-img-top" src={this.props.modalState.skin_image} alt="Skin"/>
                         </div>
                         <p style={{ marginTop: '15px', marginBottom: 0 }}><strong>Price:</strong> {this.props.modalState.price}</p>
                     </ModalBody>
