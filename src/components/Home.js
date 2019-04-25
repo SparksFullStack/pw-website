@@ -27,7 +27,7 @@ class Home extends Component {
     render() {
         return (
             <div id="home">
-                <Header page='home' toggle={this.props.toggleModal} />
+                <Header page='home' toggle={this.toggleModal} />
                 <Showcase />
                 {/* <Ads /> */}
                 <Products skins={this.props.skins} time={this.props.time} toggleModal={this.toggleModal} />
