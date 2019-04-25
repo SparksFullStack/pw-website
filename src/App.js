@@ -30,11 +30,7 @@ import axios from 'axios';
 
 class App extends Component {
   state = {
-    modalState: {
-      isOpen: false,
-      modalType: "",
-      data: undefined,
-    },
+    skins: undefined,
   }
 
   componentDidMount() {
@@ -63,18 +59,10 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  toggleModal = (modalType, skinState) => {
-      if (modalType) {
-          this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType, data: skinState }});
-      } else {
-          this.setState({ modalState: { isOpen: !this.state.modalState.isOpen, modalType: "" }});
-      }
-  }
-
   render() {
     return (
       <div className="App">
-        <Route path='/' exact component={() => <Home toggleModal={this.toggleModal} modalState={this.state.modalState} skins={this.state.skins} time={this.state.time}/>} />
+        <Route path='/' exact component={() => <Home skins={this.state.skins} time={this.state.time}/>} />
         <Route path='/login' exact component={AdminLogin} />
         <Route path='/admin' exact component={AddSkins} />
       </div>
