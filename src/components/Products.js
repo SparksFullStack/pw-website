@@ -116,7 +116,7 @@ class Products extends Component {
                     <div className="col">
                         <div className="products--header">
                             {this.calculateSkinsFound()}
-                            <p className="lead pb-3">As of {this.handleFormatTime()}</p>
+                            <p className="lead">As of {this.handleFormatTime()}</p>
 
                             
                         </div>
