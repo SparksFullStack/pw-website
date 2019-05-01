@@ -12,7 +12,9 @@ import {
     Spinner,
     Pagination,
     PaginationItem,
-    PaginationLink
+    PaginationLink,
+    InputGroup,
+    Input
 } from 'reactstrap';
 
 class Products extends Component {
@@ -21,6 +23,7 @@ class Products extends Component {
         currentSkinGroup: 1,
         skinsLoaded: false,
         currentDate: new Date(),
+        searchText: ""
     }
 
     componentDidMount() {
@@ -101,16 +104,26 @@ class Products extends Component {
         </div>
     )
 
+    handleSearchBar = event => {
+        this.setState({ searchText: event.target.value });
+    }
+
   render() {
     return (
         <section id="skins" className="py-5 text-center bg-light">
             <div className="container">
                 <div className="row">
                     <div className="col">
-                    <div className="products--header mb-5">
-                        {this.calculateSkinsFound()}
-                        <p className="lead pb-3">As of {this.handleFormatTime()}</p>
+                        <div className="products--header">
+                            {this.calculateSkinsFound()}
+                            <p className="lead pb-3">As of {this.handleFormatTime()}</p>
+
+                            
                         </div>
+
+                        <InputGroup style={{ marginBottom: "30px", maxWidth: "400px", marginLeft: "auto", marginRight: "auto" }} >
+                            <Input placeholder="Search skins..." value={this.state.searchText} onChange={this.handleSearchBar} /> 
+                        </InputGroup>
                     </div>
                 </div>
 
