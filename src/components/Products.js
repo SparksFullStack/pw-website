@@ -120,10 +120,6 @@ class Products extends Component {
 
                             
                         </div>
-
-                        <InputGroup style={{ marginBottom: "30px", maxWidth: "400px", marginLeft: "auto", marginRight: "auto" }} >
-                            <Input placeholder="Search skins..." value={this.state.searchText} onChange={this.handleSearchBar} /> 
-                        </InputGroup>
                     </div>
                 </div>
 
